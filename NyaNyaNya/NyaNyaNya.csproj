@@ -55,6 +55,7 @@
 
     <ItemGroup>
       <Folder Include="wwwroot\images\icons\" />
+      <Folder Include="wwwroot\images\planets\" />
     </ItemGroup>
 
 </Project>

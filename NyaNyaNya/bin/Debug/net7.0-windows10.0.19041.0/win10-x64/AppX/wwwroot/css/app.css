@@ -19,6 +19,18 @@ html, body, body, #app, main {
     margin: 0;
 }
 
+
+::-webkit-scrollbar {
+    background-color: black;
+    width: 10px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 25px;
+}
+
 h1:focus {
     outline: none;
 }
@@ -179,4 +191,55 @@ span {
     to {
         transform: translateY(-2000px);
     }
+}
+
+.award-container {
+    height: 200px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+li {
+    list-style: none;
+    text-decoration: none;
+    text-align: center;
+}
+
+.award {
+    background: black;
+    color: white;
+    padding: 1em;
+    margin: 1.5em;
+    border-radius: 15px;
+    border: 3px solid white;
+}
+
+.gained {
+    border: 3px solid rgb(155, 146, 26);
+    color: rgb(172, 162, 27);
+    background-color: rgb(36, 34, 3);
+}
+
+.planets-container {
+    display: flex;
+    flex-direction: row;
+    height: 200px;
+    width: 300px;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+}
+
+.planet {
+    margin: 0 1em;
+}
+
+.planet > img {
+    width: 100px;
+    height: 100px;
+}
+
+.unactive-planet {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
 }

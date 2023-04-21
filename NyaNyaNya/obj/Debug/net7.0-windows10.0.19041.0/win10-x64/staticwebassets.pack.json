@@ -37,6 +37,30 @@
       "PackagePath": "staticwebassets\\images\\icons\\play-icon.png"
     },
     {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\planets\\planet0.png",
+      "PackagePath": "staticwebassets\\images\\planets\\planet0.png"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\planets\\planet1.png",
+      "PackagePath": "staticwebassets\\images\\planets\\planet1.png"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\planets\\planet100.png",
+      "PackagePath": "staticwebassets\\images\\planets\\planet100.png"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\planets\\planet2.png",
+      "PackagePath": "staticwebassets\\images\\planets\\planet2.png"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\planets\\planet3.png",
+      "PackagePath": "staticwebassets\\images\\planets\\planet3.png"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\planets\\planet4.png",
+      "PackagePath": "staticwebassets\\images\\planets\\planet4.png"
+    },
+    {
       "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
@@ -45,16 +69,16 @@
       "PackagePath": "staticwebassets\\music\\Cipher2.mp3"
     },
     {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\music\\GreenTea.mp3",
+      "PackagePath": "staticwebassets\\music\\GreenTea.mp3"
+    },
+    {
       "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\music\\Wallpaper.mp3",
       "PackagePath": "staticwebassets\\music\\Wallpaper.mp3"
     },
     {
-      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\music\\purrple-cat-green-tea.mp3",
-      "PackagePath": "staticwebassets\\music\\purrple-cat-green-tea.mp3"
-    },
-    {
-      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\music\\purrple-cat-wish-you-were-here.mp3",
-      "PackagePath": "staticwebassets\\music\\purrple-cat-wish-you-were-here.mp3"
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\music\\WishYou.mp3",
+      "PackagePath": "staticwebassets\\music\\WishYou.mp3"
     },
     {
       "Id": "obj\\Debug\\net7.0-windows10.0.19041.0\\win10-x64\\staticwebassets\\msbuild.NyaNyaNya.Microsoft.AspNetCore.StaticWebAssets.props",

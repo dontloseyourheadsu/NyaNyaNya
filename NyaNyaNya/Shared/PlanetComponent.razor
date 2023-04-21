@@ -1,0 +1,6 @@
+﻿<img src="images/planets/@($"planet{Planet.Index}.png")" alt="Planet-@Planet.Index" class="@(Planet.IsActive ? "":"unactive-planet")"/>
+
+@code {
+    [Parameter]
+    public Planet Planet { get; set; }
+}

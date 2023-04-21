@@ -67,8 +67,13 @@ wwwroot\images\icons\award-icon.png
 wwwroot\images\icons\config-icon.png
 wwwroot\images\icons\paw-icon.png
 wwwroot\images\icons\play-icon.png
+wwwroot\images\planets\planet0.png
+wwwroot\images\planets\planet1.png
+wwwroot\images\planets\planet2.png
+wwwroot\images\planets\planet3.png
+wwwroot\images\planets\planet4.png
 wwwroot\index.html
 wwwroot\music\Cipher2.mp3
-wwwroot\music\purrple-cat-green-tea.mp3
-wwwroot\music\purrple-cat-wish-you-were-here.mp3
+wwwroot\music\GreenTea.mp3
 wwwroot\music\Wallpaper.mp3
+wwwroot\music\WishYou.mp3

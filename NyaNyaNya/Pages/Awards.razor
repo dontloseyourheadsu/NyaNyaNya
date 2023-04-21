@@ -1,0 +1,37 @@
+﻿@page "/awards/{IsPlayMusic:bool}"
+
+<div class="d-flex flex-column justify-content-center align-items-center h-100 w-100 main-menu">
+
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+
+    <h1>Awards</h1>
+
+    <ul class="award-container m-2">
+        <li class="award">
+            Complete all main 5 planets
+        </li>
+        <li class="award gained">
+            Complete extra planets
+        </li>
+        <li class="award gained">
+            Complete extra planets
+        </li>
+        <li class="award">
+            Unlock all space cats and space rats
+        </li>
+    </ul>
+
+    <NavLink href="@($"/{IsPlayMusic}")" class="cursor-pointer">
+        <Button Text="Back">
+        </Button>
+    </NavLink>
+</div>
+
+<MusicPlayer Track="Wallpaper" PlayMusic="IsPlayMusic" />
+
+@code {
+    [Parameter]
+    public bool IsPlayMusic { get; set; }
+}

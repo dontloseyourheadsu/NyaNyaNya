@@ -1,0 +1,38 @@
+﻿@page "/extras/{IsPlayMusic:bool}"
+
+<div class="d-flex flex-column justify-content-center align-items-center h-100 w-100 main-menu">
+
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+
+    <h1>Extras</h1>
+
+    <ul class="planets-container m-2">
+        @foreach (var planet in planets)
+        {
+            <li class="planet">
+                <PlanetComponent Planet="planet" />
+            </li>
+        }
+    </ul>
+
+    <NavLink href="@($"/{IsPlayMusic}")" class="cursor-pointer">
+        <Button Text="Back">
+        </Button>
+    </NavLink>
+</div>
+
+<MusicPlayer Track="Wallpaper" PlayMusic="IsPlayMusic" />
+
+@code {
+    [Parameter]
+    public bool IsPlayMusic { get; set; }
+
+    private List<Planet> planets = new List<Planet>();
+
+    public Extras()
+    {
+        planets.Add(new Planet(false, 100));    
+    }
+}

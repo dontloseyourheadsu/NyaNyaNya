@@ -8,7 +8,7 @@
 
     <h1>Configurations</h1>
 
-    <span class="d-flex justify-content-between w-50 mt-3">
+    <span class="d-flex justify-content-between w-50 m-3">
         Music
         <label class="switch">
             <input type="checkbox" @onclick="SwitchMusic" @bind="IsPlayMusic">
@@ -16,7 +16,7 @@
         </label>
     </span>
 
-    <span class="d-flex justify-content-between w-50 mt-1">
+    <span class="d-flex justify-content-between w-50 mb-3">
         Sounds
         <label class="switch">
             <input type="checkbox">
@@ -24,9 +24,8 @@
         </label>
     </span>
 
-    <NavLink href="@($"/{IsPlayMusic}")">
+    <NavLink href="@($"/{IsPlayMusic}")" class="cursor-pointer">
         <Button Text="Back">
-
         </Button>
     </NavLink>
 </div>
