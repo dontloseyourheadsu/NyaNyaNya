@@ -1,0 +1,57 @@
+﻿html, body, body, #app, main {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+* {
+    margin: 0;
+}
+
+h1:focus {
+    outline: none;
+}
+
+.orbit {
+    border-radius: 50%;
+    border: 1px gray solid;
+    height: 300px;
+    width: 300px;
+}
+
+.orbit-orb {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    z-index: 3;
+    border-radius: 50%;
+    border: 1px gray solid;
+    height: 30px;
+    width: 30px;
+    background: white;
+}
+
+.orbit-orb > img {
+    height: 98%;
+    width: 98%;
+}
+
+.orb-1 {
+    top: 0;
+    left: 0;
+}
+
+.orb-2 {
+    top: 0;
+    left: 0;
+}
+
+.orb-3 {
+    top: 0;
+    left: 0;
+}
+
+.orb-4 {
+    top: 0;
+    left: 0;
+}

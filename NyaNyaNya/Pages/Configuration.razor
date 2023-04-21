@@ -1,0 +1,44 @@
+﻿@page "/configuration/{IsPlayMusic:bool}"
+
+<div class="d-flex flex-column justify-content-center align-items-center h-100 w-100 main-menu">
+
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+
+    <h1>Configurations</h1>
+
+    <span class="d-flex justify-content-between w-50 mt-3">
+        Music
+        <label class="switch">
+            <input type="checkbox" @onclick="SwitchMusic" @bind="IsPlayMusic">
+            <span class="slider"></span>
+        </label>
+    </span>
+
+    <span class="d-flex justify-content-between w-50 mt-1">
+        Sounds
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+        </label>
+    </span>
+
+    <NavLink href="@($"/{IsPlayMusic}")">
+        <Button Text="Back">
+
+        </Button>
+    </NavLink>
+</div>
+
+<MusicPlayer Track="Cipher2" PlayMusic="IsPlayMusic" />
+
+@code {
+    [Parameter]
+    public bool IsPlayMusic { get; set; }
+
+    private void SwitchMusic()
+    {
+        IsPlayMusic = !IsPlayMusic;
+    }
+}

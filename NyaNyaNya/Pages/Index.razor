@@ -1,0 +1,35 @@
+﻿@page "/{IsPlayMusic:bool}"
+@page "/"
+
+<div class="d-flex justify-content-center align-items-center h-100 w-100 main-menu">
+
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+    
+    <div class="orbit position-relative d-flex justify-content-center align-items-center">
+
+        <NavLink href="play" Match="NavLinkMatch.All" class="position-absolute orbit-orb orb-1">
+            <img src="images/icons/play-icon.png" />
+        </NavLink>
+        <NavLink href="@($"configuration/{IsPlayMusic}")" Match="NavLinkMatch.All" class="position-absolute orbit-orb orb-2">
+            <img src="images/icons/config-icon.png"/>
+        </NavLink>
+        <NavLink href="awards" Match="NavLinkMatch.All" class="position-absolute orbit-orb orb-3">
+            <img src="images/icons/award-icon.png" />
+        </NavLink>
+        <NavLink href="extras" Match="NavLinkMatch.All" class="position-absolute orbit-orb orb-4">
+            <img src="images/icons/paw-icon.png" />
+        </NavLink>
+    
+        <img class="position-relative cat-menu" src="" alt="cat-menu"/>
+    
+    </div>
+</div>
+
+<MusicPlayer Track="Cipher2" PlayMusic="IsPlayMusic" />
+
+@code {
+    [Parameter]
+    public bool IsPlayMusic { get; set; }
+}
