@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "pckDaTU9VfD2zTECoczEvfSZWQ8x8oAOdkVpXwjinGs=",
+  "Hash": "Xu9OhlPYbPskRLnlt/7+HiDj2UGb5jeDO+ApnXi9H8g=",
   "Source": "NyaNyaNya",
   "BasePath": "/",
   "Mode": "Root",
@@ -168,6 +168,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\database\\planets.json"
+    },
+    {
+      "Identity": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\database\\rats.json",
+      "SourceId": "NyaNyaNya",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "database/rats.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\database\\rats.json"
     },
     {
       "Identity": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\backgrounds\\background-100.jpg",

@@ -1,10 +1,13 @@
 [
+
   {
     "Id": 0,
     "Name": "Space Cat",
     "Image": "images/cats/space-cat.png",
     "Life": 5,
     "Attack": 1,
+    "Recharge": 1,
+    "Price": 1,
     "X": 0,
     "Y": 0,
     "Unlocked": true
@@ -14,7 +17,9 @@
     "Name": "Wise Cat",
     "Image": "images/cats/wise-cat.png",
     "Life": 4,
-    "Attack": 0,
+    "Attack": 2,
+    "Recharge": 2,
+    "Price": 1,
     "X": 0,
     "Y": 0,
     "Unlocked": true
@@ -23,8 +28,70 @@
     "Id": 2,
     "Name": "SpIce Cat",
     "Image": "images/cats/spice-cat.png",
-    "Life": 5,
+    "Life": 3,
+    "Attack": 3,
+    "Recharge": 2,
+    "Price": 2,
+    "X": 0,
+    "Y": 0,
+    "Unlocked": false
+  },
+  {
+    "Id": 3,
+    "Name": "Savage Cat",
+    "Image": "images/cats/savage-cat.png",
+    "Life": 2,
+    "Attack": 3,
+    "Recharge": 1,
+    "Price": 2,
+    "X": 0,
+    "Y": 0,
+    "Unlocked": false
+  },
+  {
+    "Id": 4,
+    "Name": "Shielder Cat",
+    "Image": "images/cats/shielder-cat.png",
+    "Life": 6,
     "Attack": 1,
+    "Recharge": 2,
+    "Price": 3,
+    "X": 0,
+    "Y": 0,
+    "Unlocked": false
+  },
+  {
+    "Id": 5,
+    "Name": "Tramp Cat",
+    "Image": "images/cats/tramp-cat.png",
+    "Life": 1,
+    "Attack": 5,
+    "Recharge": 0,
+    "Price": 2,
+    "X": 0,
+    "Y": 0,
+    "Unlocked": false
+  },
+  {
+    "Id": 6,
+    "Name": "Projectile Cat",
+    "Image": "images/cats/projectile-cat.png",
+    "Life": 2,
+    "Attack": 5,
+    "Recharge": 2,
+    "Price": 3,
+    "X": 0,
+    "Y": 0,
+    "Unlocked": false
+  },
+  {
+    "Id": 7,
+    "Name": "Genius Cat",
+    "Image": "images/cats/genius-cat.png",
+    "Life": 3,
+    "Attack": 3,
+    "Recharge": 1,
+    "Price": 3,
     "X": 0,
     "Y": 0,
     "Unlocked": false

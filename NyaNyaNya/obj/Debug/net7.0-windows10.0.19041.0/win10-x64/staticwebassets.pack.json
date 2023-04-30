@@ -33,6 +33,10 @@
       "PackagePath": "staticwebassets\\database\\planets.json"
     },
     {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\database\\rats.json",
+      "PackagePath": "staticwebassets\\database\\rats.json"
+    },
+    {
       "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\backgrounds\\background-100.jpg",
       "PackagePath": "staticwebassets\\images\\backgrounds\\background-100.jpg"
     },
