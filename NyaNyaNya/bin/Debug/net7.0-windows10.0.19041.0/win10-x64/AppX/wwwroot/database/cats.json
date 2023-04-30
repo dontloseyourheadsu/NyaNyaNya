@@ -1,0 +1,32 @@
+[
+  {
+    "Id": 0,
+    "Name": "Space Cat",
+    "Image": "images/cats/space-cat.png",
+    "Life": 5,
+    "Attack": 1,
+    "X": 0,
+    "Y": 0,
+    "Unlocked": true
+  },
+  {
+    "Id": 1,
+    "Name": "Wise Cat",
+    "Image": "images/cats/wise-cat.png",
+    "Life": 4,
+    "Attack": 0,
+    "X": 0,
+    "Y": 0,
+    "Unlocked": true
+  },
+  {
+    "Id": 2,
+    "Name": "SpIce Cat",
+    "Image": "images/cats/spice-cat.png",
+    "Life": 5,
+    "Attack": 1,
+    "X": 0,
+    "Y": 0,
+    "Unlocked": false
+  }
+]
