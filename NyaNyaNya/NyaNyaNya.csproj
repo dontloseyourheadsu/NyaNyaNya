@@ -59,6 +59,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="wwwroot\images\rats\" />
       <Folder Include="wwwroot\images\planets\" />
     </ItemGroup>
 
