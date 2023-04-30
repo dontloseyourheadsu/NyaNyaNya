@@ -35,6 +35,7 @@ public class MonoPackageManager_Resources {
 		"Microsoft.Extensions.Primitives.dll",
 		"Microsoft.JSInterop.dll",
 		"Microsoft.Maui.Graphics.dll",
+		"Plugin.Maui.Audio.dll",
 		"System.IO.Pipelines.dll",
 		"Xamarin.Android.Glide.dll",
 		"Xamarin.Android.Glide.Annotations.dll",

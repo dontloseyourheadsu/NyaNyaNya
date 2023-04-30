@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "SeElF1JGn4PGlIOeD6GZh5LpfoDUWzy7WpA4iROsoIPUbxfJCRPqkXr3ildGb20AeCMrai98ujZLeLacAPZRJQ==",
+  "dgSpecHash": "1mkWCcYeFIoc40nTqnKaGjBrsS67PrQTcIs4LBV6EpRhWg6AIrPp+ChXlyO2xJIjzIDC50YOT9RfoC8HjVUI9w==",
   "success": true,
   "projectFilePath": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\NyaNyaNya.csproj",
   "expectedPackageFiles": [
@@ -36,6 +36,7 @@
     "C:\\Users\\yisus\\.nuget\\packages\\microsoft.maui.graphics.win2d.winui.desktop\\7.0.52\\microsoft.maui.graphics.win2d.winui.desktop.7.0.52.nupkg.sha512",
     "C:\\Users\\yisus\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22621.755\\microsoft.windows.sdk.buildtools.10.0.22621.755.nupkg.sha512",
     "C:\\Users\\yisus\\.nuget\\packages\\microsoft.windowsappsdk\\1.2.221109.1\\microsoft.windowsappsdk.1.2.221109.1.nupkg.sha512",
+    "C:\\Users\\yisus\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\yisus\\.nuget\\packages\\system.io.pipelines\\7.0.0\\system.io.pipelines.7.0.0.nupkg.sha512",
     "C:\\Users\\yisus\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
     "C:\\Users\\yisus\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",

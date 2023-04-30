@@ -13,12 +13,24 @@
       "PackagePath": "staticwebassets\\css\\common.css"
     },
     {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\css\\fonts\\BebasNeue-Regular.ttf",
+      "PackagePath": "staticwebassets\\css\\fonts\\BebasNeue-Regular.ttf"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\css\\fonts\\SpaceGrotesk-Regular.ttf",
+      "PackagePath": "staticwebassets\\css\\fonts\\SpaceGrotesk-Regular.ttf"
+    },
+    {
       "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\icons\\award-icon.png",
       "PackagePath": "staticwebassets\\images\\icons\\award-icon.png"
     },
     {
       "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\icons\\config-icon.png",
       "PackagePath": "staticwebassets\\images\\icons\\config-icon.png"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\icons\\menu-cat.png",
+      "PackagePath": "staticwebassets\\images\\icons\\menu-cat.png"
     },
     {
       "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\icons\\paw-icon.png",
@@ -29,8 +41,48 @@
       "PackagePath": "staticwebassets\\images\\icons\\play-icon.png"
     },
     {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\planets\\planet0.png",
+      "PackagePath": "staticwebassets\\images\\planets\\planet0.png"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\planets\\planet1.png",
+      "PackagePath": "staticwebassets\\images\\planets\\planet1.png"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\planets\\planet100.png",
+      "PackagePath": "staticwebassets\\images\\planets\\planet100.png"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\planets\\planet2.png",
+      "PackagePath": "staticwebassets\\images\\planets\\planet2.png"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\planets\\planet3.png",
+      "PackagePath": "staticwebassets\\images\\planets\\planet3.png"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\planets\\planet4.png",
+      "PackagePath": "staticwebassets\\images\\planets\\planet4.png"
+    },
+    {
       "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\music\\Cipher2.mp3",
+      "PackagePath": "staticwebassets\\music\\Cipher2.mp3"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\music\\GreenTea.mp3",
+      "PackagePath": "staticwebassets\\music\\GreenTea.mp3"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\music\\Wallpaper.mp3",
+      "PackagePath": "staticwebassets\\music\\Wallpaper.mp3"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\music\\WishYou.mp3",
+      "PackagePath": "staticwebassets\\music\\WishYou.mp3"
     },
     {
       "Id": "obj\\Debug\\net7.0-android\\staticwebassets\\msbuild.NyaNyaNya.Microsoft.AspNetCore.StaticWebAssets.props",

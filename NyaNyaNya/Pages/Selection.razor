@@ -1,0 +1,69 @@
+﻿@page "/selection/{IsPlayMusic:bool}/{PlanetId:int}"
+
+<div class="d-flex flex-column justify-content-center align-items-center h-100 w-100 main-menu">
+
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+
+    <h1>Select Cats</h1>
+
+    <div class="mt-2 d-grid cols-3 auto-rows">
+        @foreach(var cat in cats)
+        {
+            <div class="grid-item" @onclick="@(() => {selectedCat = cat; catIsSelected = true;})">
+                <img src="@cat.Image"/>
+            </div>
+        }
+    </div>
+
+    <div class="d-flex justify-content-center align-items-center mt-2" style="gap: 10px; width: 650px;">
+        @for(int i = 0; i < 6; i++)
+        {
+            <DrawerItem Cat="catDrawer[i]" @onclick="@(() => {if(catIsSelected) catDrawer[i] = selectedCat;})"/>
+        }
+    </div>
+
+</div>
+
+<MusicPlayer Track="GreenTea" PlayMusic="IsPlayMusic" />
+
+@code {
+    [Parameter]
+    public bool IsPlayMusic { get; set; }
+
+    [Parameter]
+    public int PlanetId { get; set; }
+
+    private List<Cat> cats;
+
+    private List<Cat> catDrawer = new List<Cat>();
+
+    private bool catIsSelected = false;
+    private Cat? selectedCat;
+
+    public Selection()
+    {
+        string rootpath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "wwwroot");
+        using (StreamReader r = new StreamReader(rootpath + "/database/cats.json"))
+        {
+            string json = r.ReadToEnd();
+            var catsTemp = JsonConvert.DeserializeObject<List<Cat>>(json);
+            cats = catsTemp.Where(p => p.Unlocked ).ToList();
+        }
+
+
+        for (int i = 0; i < 6; i++)
+        {
+            catDrawer.Add(new Cat());
+        }
+    }
+
+    private void DrawCat(int i)
+    {
+        if (catIsSelected)
+        {
+            catDrawer[i] = selectedCat;
+        }
+    }
+}

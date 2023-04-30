@@ -12,7 +12,7 @@
         @foreach (var planet in planets)
         {
             <li class="planet">
-                <PlanetComponent Planet="planet" />
+                <PlanetComponent Planet="planet" IsPlayMusic="IsPlayMusic"/>
             </li>
         }
     </ul>
@@ -23,16 +23,22 @@
     </NavLink>
 </div>
 
-<MusicPlayer Track="Wallpaper" PlayMusic="IsPlayMusic" />
+<MusicPlayer Track="WishYou" PlayMusic="IsPlayMusic" />
 
 @code {
     [Parameter]
     public bool IsPlayMusic { get; set; }
 
-    private List<Planet> planets = new List<Planet>();
+    private List<Planet> planets;
 
     public Extras()
     {
-        planets.Add(new Planet(false, 100));    
+        string rootpath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "wwwroot");
+        using (StreamReader r = new StreamReader(rootpath + "/database/planets.json"))
+        {
+            string json = r.ReadToEnd();
+            var planetsTemp = JsonConvert.DeserializeObject<List<Planet>>(json);
+            planets = planetsTemp.Where(p => p.Index >= 100).ToList();
+        }
     }
 }

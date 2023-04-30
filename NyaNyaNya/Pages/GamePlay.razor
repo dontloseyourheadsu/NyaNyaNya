@@ -1,0 +1,40 @@
+﻿@page "/gameplay/{IsPlayMusic:bool}/{PlanetId:int}"
+
+<div class="d-flex flex-column justify-content-center align-items-center h-100 w-100 game-bg"
+    style="@($"background: url('images/backgrounds/background-{PlanetId}.jpg');")">
+    <span class="position-absolute game-box energy-box">
+        <img src="images/icons/thunder.png" alt="thunder" style="width: 45px; height: 70px;"> @energy
+    </span>
+
+    <div class="@($"menu-frame d-flex justify-content-between align-items-center position-absolute {menuFrameClass}")">
+        <img class="cursor-pointer close-icon" src="images/icons/exit.jpg" @onclick="@SwitchMenuFrame">
+        <span class="exit-button justify-content-center cursor-pointer">Exit</span>
+    </div>
+
+
+
+    <span class="position-absolute game-box config-box cursor-pointer justify-content-center" @onclick="@SwitchMenuFrame">
+        <img src="images/icons/pixel-paw.png" alt="paw" style="height: 90%; width: 90%;"/>
+    </span>
+</div>
+
+<MusicPlayer Track="Skate" PlayMusic="IsPlayMusic" />
+
+@code {
+    [Parameter]
+    public bool IsPlayMusic { get; set; }
+
+    [Parameter]
+    public int PlanetId { get; set; }
+
+    private bool menuFramOn = false;
+    private string menuFrameClass = "menu-frame-off";
+
+    private int energy = 0;
+
+    protected void SwitchMenuFrame()
+    {
+        menuFramOn = !menuFramOn;
+        menuFrameClass = menuFramOn ? "" : "menu-frame-off";
+    }
+}

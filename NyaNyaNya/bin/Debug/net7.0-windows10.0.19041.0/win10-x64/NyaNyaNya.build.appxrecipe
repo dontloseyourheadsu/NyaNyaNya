@@ -730,6 +730,9 @@
     <AppxPackagedFile Include="C:\Users\yisus\.nuget\packages\microsoft.windowsappsdk\1.2.221109.1\lib\net6.0-windows10.0.18362.0\Microsoft.WindowsAppRuntime.Bootstrap.Net.dll">
       <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.Net.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\yisus\.nuget\packages\newtonsoft.json\13.0.3\lib\net6.0\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\yisus\.nuget\packages\system.io.pipelines\7.0.0\lib\net7.0\System.IO.Pipelines.dll">
       <PackagePath>System.IO.Pipelines.dll</PackagePath>
     </AppxPackagedFile>
@@ -769,8 +772,50 @@
     <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\css\fonts\BebasNeue-Regular.ttf">
       <PackagePath>wwwroot\css\fonts\BebasNeue-Regular.ttf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\css\fonts\PressStart2P-Regular.ttf">
+      <PackagePath>wwwroot\css\fonts\PressStart2P-Regular.ttf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\css\fonts\SpaceGrotesk-Regular.ttf">
       <PackagePath>wwwroot\css\fonts\SpaceGrotesk-Regular.ttf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\database\cats.json">
+      <PackagePath>wwwroot\database\cats.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\database\planets.json">
+      <PackagePath>wwwroot\database\planets.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\backgrounds\background-100.jpg">
+      <PackagePath>wwwroot\images\backgrounds\background-100.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\backgrounds\cat-container.jpg">
+      <PackagePath>wwwroot\images\backgrounds\cat-container.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\backgrounds\menu-frame.png">
+      <PackagePath>wwwroot\images\backgrounds\menu-frame.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\cats\genius-cat.png">
+      <PackagePath>wwwroot\images\cats\genius-cat.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\cats\projectile-cat.png">
+      <PackagePath>wwwroot\images\cats\projectile-cat.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\cats\savage-cat.png">
+      <PackagePath>wwwroot\images\cats\savage-cat.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\cats\shielder-cat.png">
+      <PackagePath>wwwroot\images\cats\shielder-cat.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\cats\space-cat.png">
+      <PackagePath>wwwroot\images\cats\space-cat.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\cats\spice-cat.png">
+      <PackagePath>wwwroot\images\cats\spice-cat.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\cats\tramp-cat.png">
+      <PackagePath>wwwroot\images\cats\tramp-cat.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\cats\wise-cat.png">
+      <PackagePath>wwwroot\images\cats\wise-cat.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\icons\award-icon.png">
       <PackagePath>wwwroot\images\icons\award-icon.png</PackagePath>
@@ -778,17 +823,38 @@
     <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\icons\config-icon.png">
       <PackagePath>wwwroot\images\icons\config-icon.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\icons\dark-button.png">
+      <PackagePath>wwwroot\images\icons\dark-button.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\icons\exit.jpg">
+      <PackagePath>wwwroot\images\icons\exit.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\icons\exit-button.png">
+      <PackagePath>wwwroot\images\icons\exit-button.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\icons\menu-cat.png">
+      <PackagePath>wwwroot\images\icons\menu-cat.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\icons\paw-icon.png">
       <PackagePath>wwwroot\images\icons\paw-icon.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\icons\pixel-paw.png">
+      <PackagePath>wwwroot\images\icons\pixel-paw.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\icons\play-icon.png">
       <PackagePath>wwwroot\images\icons\play-icon.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\icons\thunder.png">
+      <PackagePath>wwwroot\images\icons\thunder.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\planets\planet0.png">
       <PackagePath>wwwroot\images\planets\planet0.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\planets\planet1.png">
       <PackagePath>wwwroot\images\planets\planet1.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\planets\planet100.png">
+      <PackagePath>wwwroot\images\planets\planet100.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\planets\planet2.png">
       <PackagePath>wwwroot\images\planets\planet2.png</PackagePath>
@@ -807,6 +873,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\music\GreenTea.mp3">
       <PackagePath>wwwroot\music\GreenTea.mp3</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\music\Skate.mp3">
+      <PackagePath>wwwroot\music\Skate.mp3</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\music\Wallpaper.mp3">
       <PackagePath>wwwroot\music\Wallpaper.mp3</PackagePath>

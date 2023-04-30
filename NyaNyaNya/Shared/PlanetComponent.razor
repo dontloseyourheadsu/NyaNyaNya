@@ -1,6 +1,19 @@
-﻿<img src="images/planets/@($"planet{Planet.Index}.png")" alt="Planet-@Planet.Index" class="@(Planet.IsActive ? "":"unactive-planet")"/>
+﻿@inject NavigationManager NavigationManager
+<img src="images/planets/@($"planet{Planet.Index}.png")" alt="Planet-@Planet.Index" class="@(Planet.IsActive ? "cursor-pointer":"unactive-planet")" @onclick="@GoToPlanet"/>
 
 @code {
     [Parameter]
     public Planet Planet { get; set; }
+
+    [Parameter]
+    public bool IsPlayMusic { get; set; }
+
+    protected void GoToPlanet()
+    {
+        if (Planet.IsActive)
+        {
+            NavigationManager.NavigateTo($"/selection/{IsPlayMusic}/{Planet.Index}");
+        }
+    }
+
 }
