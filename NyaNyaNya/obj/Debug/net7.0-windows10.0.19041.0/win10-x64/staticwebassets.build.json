@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Xu9OhlPYbPskRLnlt/7+HiDj2UGb5jeDO+ApnXi9H8g=",
+  "Hash": "b0G/Nf71PO5yxx+Ij3uqLSUNSWK9DnLlG87MPgRiPz8=",
   "Source": "NyaNyaNya",
   "BasePath": "/",
   "Mode": "Root",
@@ -185,6 +185,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\database\\rats.json"
+    },
+    {
+      "Identity": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\database\\selected-cats.json",
+      "SourceId": "NyaNyaNya",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "database/selected-cats.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\database\\selected-cats.json"
     },
     {
       "Identity": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\backgrounds\\background-100.jpg",
