@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "cJ7KAErYqSRI9FT8bEr9SibbxusPD/Ir35oMjMxXZiY=",
+  "Hash": "+VPnHEp7HLDYEtRGTDVZFJ9tEjT6I6jlFvhCRRnFPgQ=",
   "Source": "NyaNyaNya",
   "BasePath": "/",
   "Mode": "Root",
@@ -661,6 +661,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\planets\\planet4.png"
+    },
+    {
+      "Identity": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\plataforms\\001_Plataform.png",
+      "SourceId": "NyaNyaNya",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "images/plataforms/001_Plataform.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\plataforms\\001_Plataform.png"
+    },
+    {
+      "Identity": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\plataforms\\002_Plataform.png",
+      "SourceId": "NyaNyaNya",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "images/plataforms/002_Plataform.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\plataforms\\002_Plataform.png"
     },
     {
       "Identity": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\rats\\cyber-rat.png",

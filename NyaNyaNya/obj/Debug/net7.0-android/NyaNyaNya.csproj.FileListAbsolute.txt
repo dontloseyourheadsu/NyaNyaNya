@@ -1004,3 +1004,4 @@ C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\obj\Debug\net7.0-android\lp\
 C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\obj\Debug\net7.0-android\lp\157\jl\files.cache
 C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\obj\Debug\net7.0-android\android\assets\Plugin.Maui.Audio.dll
 C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\obj\Debug\net7.0-android\android\src\crc64467b05f37239e7a6\StreamMediaDataSource.java
+C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\obj\Debug\net7.0-android\android\assets\Newtonsoft.Json.dll

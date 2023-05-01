@@ -149,6 +149,14 @@
       "PackagePath": "staticwebassets\\images\\planets\\planet4.png"
     },
     {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\plataforms\\001_Plataform.png",
+      "PackagePath": "staticwebassets\\images\\plataforms\\001_Plataform.png"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\plataforms\\002_Plataform.png",
+      "PackagePath": "staticwebassets\\images\\plataforms\\002_Plataform.png"
+    },
+    {
       "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\rats\\cyber-rat.png",
       "PackagePath": "staticwebassets\\images\\rats\\cyber-rat.png"
     },

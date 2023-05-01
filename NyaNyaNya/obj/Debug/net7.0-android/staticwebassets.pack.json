@@ -17,8 +17,72 @@
       "PackagePath": "staticwebassets\\css\\fonts\\BebasNeue-Regular.ttf"
     },
     {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\css\\fonts\\PressStart2P-Regular.ttf",
+      "PackagePath": "staticwebassets\\css\\fonts\\PressStart2P-Regular.ttf"
+    },
+    {
       "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\css\\fonts\\SpaceGrotesk-Regular.ttf",
       "PackagePath": "staticwebassets\\css\\fonts\\SpaceGrotesk-Regular.ttf"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\database\\cats.json",
+      "PackagePath": "staticwebassets\\database\\cats.json"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\database\\planets.json",
+      "PackagePath": "staticwebassets\\database\\planets.json"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\database\\rats.json",
+      "PackagePath": "staticwebassets\\database\\rats.json"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\database\\selected-cats.json",
+      "PackagePath": "staticwebassets\\database\\selected-cats.json"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\backgrounds\\background-100.jpg",
+      "PackagePath": "staticwebassets\\images\\backgrounds\\background-100.jpg"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\backgrounds\\cat-container.jpg",
+      "PackagePath": "staticwebassets\\images\\backgrounds\\cat-container.jpg"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\backgrounds\\menu-frame.png",
+      "PackagePath": "staticwebassets\\images\\backgrounds\\menu-frame.png"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\cats\\genius-cat.png",
+      "PackagePath": "staticwebassets\\images\\cats\\genius-cat.png"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\cats\\projectile-cat.png",
+      "PackagePath": "staticwebassets\\images\\cats\\projectile-cat.png"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\cats\\savage-cat.png",
+      "PackagePath": "staticwebassets\\images\\cats\\savage-cat.png"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\cats\\shielder-cat.png",
+      "PackagePath": "staticwebassets\\images\\cats\\shielder-cat.png"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\cats\\space-cat.png",
+      "PackagePath": "staticwebassets\\images\\cats\\space-cat.png"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\cats\\spice-cat.png",
+      "PackagePath": "staticwebassets\\images\\cats\\spice-cat.png"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\cats\\tramp-cat.png",
+      "PackagePath": "staticwebassets\\images\\cats\\tramp-cat.png"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\cats\\wise-cat.png",
+      "PackagePath": "staticwebassets\\images\\cats\\wise-cat.png"
     },
     {
       "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\icons\\award-icon.png",
@@ -29,6 +93,18 @@
       "PackagePath": "staticwebassets\\images\\icons\\config-icon.png"
     },
     {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\icons\\dark-button.png",
+      "PackagePath": "staticwebassets\\images\\icons\\dark-button.png"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\icons\\exit-button.png",
+      "PackagePath": "staticwebassets\\images\\icons\\exit-button.png"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\icons\\exit.jpg",
+      "PackagePath": "staticwebassets\\images\\icons\\exit.jpg"
+    },
+    {
       "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\icons\\menu-cat.png",
       "PackagePath": "staticwebassets\\images\\icons\\menu-cat.png"
     },
@@ -37,8 +113,16 @@
       "PackagePath": "staticwebassets\\images\\icons\\paw-icon.png"
     },
     {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\icons\\pixel-paw.png",
+      "PackagePath": "staticwebassets\\images\\icons\\pixel-paw.png"
+    },
+    {
       "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\icons\\play-icon.png",
       "PackagePath": "staticwebassets\\images\\icons\\play-icon.png"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\icons\\thunder.png",
+      "PackagePath": "staticwebassets\\images\\icons\\thunder.png"
     },
     {
       "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\planets\\planet0.png",
@@ -65,6 +149,34 @@
       "PackagePath": "staticwebassets\\images\\planets\\planet4.png"
     },
     {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\plataforms\\001_Plataform.png",
+      "PackagePath": "staticwebassets\\images\\plataforms\\001_Plataform.png"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\plataforms\\002_Plataform.png",
+      "PackagePath": "staticwebassets\\images\\plataforms\\002_Plataform.png"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\rats\\cyber-rat.png",
+      "PackagePath": "staticwebassets\\images\\rats\\cyber-rat.png"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\rats\\giganto-rat.png",
+      "PackagePath": "staticwebassets\\images\\rats\\giganto-rat.png"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\rats\\portal-rat.png",
+      "PackagePath": "staticwebassets\\images\\rats\\portal-rat.png"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\rats\\robo-rat.png",
+      "PackagePath": "staticwebassets\\images\\rats\\robo-rat.png"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\rats\\runne-rat.png",
+      "PackagePath": "staticwebassets\\images\\rats\\runne-rat.png"
+    },
+    {
       "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
@@ -75,6 +187,10 @@
     {
       "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\music\\GreenTea.mp3",
       "PackagePath": "staticwebassets\\music\\GreenTea.mp3"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\music\\Skate.mp3",
+      "PackagePath": "staticwebassets\\music\\Skate.mp3"
     },
     {
       "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\music\\Wallpaper.mp3",

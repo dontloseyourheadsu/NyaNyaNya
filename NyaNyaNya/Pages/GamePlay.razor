@@ -8,12 +8,40 @@
 
     <div class="@($"menu-frame d-flex justify-content-between align-items-center position-absolute {menuFrameClass}")">
         <img class="cursor-pointer close-icon" src="images/icons/exit.jpg" @onclick="@SwitchMenuFrame">
-        <span class="exit-button justify-content-center cursor-pointer">Exit</span>
+        <NavLink href="@($"/{IsPlayMusic}")" class="cursor-pointer">
+            <span class="exit-button justify-content-center cursor-pointer">Exit</span>
+        </NavLink>
     </div>
 
     <span class="position-absolute game-box config-box cursor-pointer justify-content-center" @onclick="@SwitchMenuFrame">
         <img src="images/icons/pixel-paw.png" alt="paw" style="height: 90%; width: 90%;"/>
     </span>
+
+    <div class="castle"></div>
+
+    @for(int i = 0; i < platformsY.Count; i++)
+    {
+        @for (int j = 0; j < platformsX.Count; j++)
+        {
+            var y = i;
+            var x = j;
+            int platformVersion = 0;
+
+            if (x % 2 == 0)
+            {
+                platformVersion = y % 2 == 0 ? 1 : 2;
+            }
+            else
+            {
+                platformVersion = y % 2 == 0 ? 2 : 1;
+            }
+
+            <div class="platform platform-@platformVersion position-absolute" style="@($"top: {platformsY[y]}px; left: {platformsX[x]}px;")">
+
+            </div>
+        }
+    }
+
 
     <div class="d-flex justify-content-center align-items-center position-absolute center-absolute" style="gap: 10px; bottom: 0;">
         @for (int i = 0; i < 6; i++)
@@ -42,12 +70,14 @@
     [Parameter]
     public int CatNames { get; set; }
 
-    private bool menuFramOn = false;
-    private string menuFrameClass = "menu-frame-off";
-
-    private List<Cat> catDrawer = new List<Cat>();
-
     private int energy = 0;
+
+    private List<int> platformsX = new List<int>();
+    private List<int> platformsY = new List<int>();
+
+    private string menuFrameClass = "menu-frame-off";
+    private bool menuFramOn = false;
+    private List<Cat> catDrawer = new List<Cat>();
 
     string rootpath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "wwwroot");
 
@@ -61,6 +91,16 @@
         }
 
         File.WriteAllText(rootpath + "/database/selected-cats.json", string.Empty);
+
+        for (int i = 0; i < 4; i++)
+        {
+            platformsY.Add(20 + (i * 80));
+        }
+
+        for (int i = 0; i < 8; i++)
+        {
+            platformsX.Add(180 + (i * 80));
+        }
     }
 
     protected void SwitchMenuFrame()

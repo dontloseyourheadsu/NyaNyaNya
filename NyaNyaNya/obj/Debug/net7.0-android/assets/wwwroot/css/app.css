@@ -9,6 +9,11 @@
     src: url(fonts/SpaceGrotesk-Regular.ttf);
 }
 
+@font-face {
+    font-family: PressStart2P;
+    src: url(fonts/PressStart2P-Regular.ttf);
+}
+
 html, body, body, #app, main {
     height: 100%;
     width: 100%;
@@ -33,6 +38,10 @@ html, body, body, #app, main {
 
 h1:focus {
     outline: none;
+}
+
+img[src=""] {
+    display: none;
 }
 
 h1 {
@@ -239,6 +248,118 @@ li {
 }
 
 .unactive-planet {
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
+}
+
+.game-box {
+    height: 50px;
+    width: 50px;
+    padding: 0 15px;
+    background: url('../images/icons/dark-button.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: rgba(255,255,255,0.8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: right;
+}
+
+.energy-box {
+    width: 100px;
+    top: 15px;
+    left: 15px;
+}
+
+.config-box {
+    top: 15px;
+    right: 15px;
+}
+
+.game-bg {
+    overflow: hidden;
+    touch-action: none;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.menu-frame {
+    top: 10%;
+    left: 20%;
+    height: 80%;
+    width: 60%;
+    padding: 0 15px;
+    background: url('../images/backgrounds/menu-frame.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 1s ease-in-out;
+}
+
+.menu-frame-off {
+    top: -100%;
+}
+
+.exit-button {
+    background: url('../images/icons/exit-button.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 80px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 1.5em;
+    font-family: PressStart2P;
+    letter-spacing: -5px;
+}
+
+.close-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 70px;
+    width: 70px;
+}
+
+.cat-container {
+    background: url('../images/backgrounds/cat-container.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: rgba(255,255,255, 0.7);
+    width: 100%;
+    font-family: PressStart2P;
+    font-size: 7px;
+}
+
+.container-selected {
+    border: 5px solid white;
+}
+
+.platform-1 {
+    background: url('../images/plataforms/001_Plataform.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.platform-2 {
+    background: url('../images/plataforms/002_Plataform.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.platform {
+    width: 80px;
+    height: 80px;
 }
