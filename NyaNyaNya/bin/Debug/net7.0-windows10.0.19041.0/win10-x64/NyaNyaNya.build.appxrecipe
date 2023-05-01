@@ -784,6 +784,9 @@
     <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\database\planets.json">
       <PackagePath>wwwroot\database\planets.json</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\database\rats.json">
+      <PackagePath>wwwroot\database\rats.json</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\backgrounds\background-100.jpg">
       <PackagePath>wwwroot\images\backgrounds\background-100.jpg</PackagePath>
     </AppxPackagedFile>

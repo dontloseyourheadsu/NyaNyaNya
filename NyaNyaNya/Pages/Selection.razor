@@ -13,9 +13,16 @@
         {
             var catIndex = i;
 
-            <div class="grid-item" @onclick="@(e => SelectCat(e, catIndex))">
+            <div class="grid-item @containerClasses[i]" @onclick="@(e => SelectCat(e, catIndex))">
                 <img src="@cats[i].Image"/>
             </div>
+        }
+    </div>
+
+    <div style="color: white;">
+        @foreach(var selectedCat in containerClasses)
+        {
+            <span>@selectedCat</span>
         }
     </div>
 
@@ -46,6 +53,8 @@
 
     private List<Cat> cats;
     private List<bool> selectedCats;
+    private List<string> containerClasses;
+    private string containerSelected = "container-selected";
 
     private List<Cat> catDrawer = new List<Cat>();
 
@@ -69,6 +78,13 @@
             selectedCats.Add(false);
         }
 
+        containerClasses = new List<string>();
+
+        @for(int i = 0; i < cats.Count; i++)
+        {
+            containerClasses.Add("");
+        }
+
         for (int i = 0; i < 6; i++)
         {
             catDrawer.Add(new Cat());
@@ -79,23 +95,32 @@
     {
         selectedCatIndex = catIndex;
         catIsSelected = true;
+
+        for (int i = 0; i < containerClasses.Count; i++)
+        {
+            containerClasses[i] = "";
+        }
+
+        containerClasses[catIndex] = containerSelected;
     }
 
     private void DrawCat(MouseEventArgs e, int selectedDrawer)
     {
-        //TODO: solve logic
-        if (catIsSelected && !selectedCats[selectedCatIndex])
+        //add cat to drawer if it hasnt been selected, a cat has been selected and the drawer doesnt have the cat selected
+        if (!selectedCats[selectedCatIndex] && catIsSelected && !catDrawer.Any(p => p.Name == cats[selectedCatIndex].Name))
         {
             catDrawer[selectedDrawer] = cats[selectedCatIndex];
-            catIsSelected = false;
             selectedCats[selectedCatIndex] = true;
-        } else
+        }
+        else if (!catIsSelected && cats.Any(p => p.Name == catDrawer[selectedDrawer].Name))
         {
-            if (selectedCats[selectedCatIndex])
-            {
-                int catIndex = cats.FindIndex(cat => cat.Id == catDrawer[selectedDrawer].Id);
-                selectedCats[catIndex] = false;
-            }
+            selectedCats[cats.FindIndex(p => p.Name == catDrawer[selectedDrawer].Name)] = false;
+            catDrawer[selectedDrawer] = new Cat();
+        }
+        catIsSelected = false;
+        for (int i = 0; i < containerClasses.Count; i++)
+        {
+            containerClasses[i] = "";
         }
     }
 }

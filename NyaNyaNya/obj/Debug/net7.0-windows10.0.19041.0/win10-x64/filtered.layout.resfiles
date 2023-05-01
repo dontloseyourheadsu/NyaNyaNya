@@ -66,6 +66,7 @@ wwwroot\css\fonts\PressStart2P-Regular.ttf
 wwwroot\css\fonts\SpaceGrotesk-Regular.ttf
 wwwroot\database\cats.json
 wwwroot\database\planets.json
+wwwroot\database\rats.json
 wwwroot\images\backgrounds\background-100.jpg
 wwwroot\images\backgrounds\cat-container.jpg
 wwwroot\images\backgrounds\menu-frame.png

@@ -336,3 +336,7 @@ li {
     font-family: PressStart2P;
     font-size: 9px;
 }
+
+.container-selected {
+    border: 5px solid white;
+}
