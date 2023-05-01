@@ -363,3 +363,7 @@ li {
     width: 80px;
     height: 80px;
 }
+
+.drawer-selected {
+    border: 5px solid white;
+}

@@ -9,8 +9,8 @@
     "Price": 1,
     "X": 0,
     "Y": 0,
-    "Width": 65,
-    "Height": 65,
+    "Width": 50,
+    "Height": 50,
     "Unlocked": true
   },
   {
@@ -23,8 +23,8 @@
     "Price": 1,
     "X": 0,
     "Y": 0,
-    "Width": 65,
-    "Height": 65,
+    "Width": 50,
+    "Height": 50,
     "Unlocked": true
   },
   {
@@ -37,8 +37,8 @@
     "Price": 2,
     "X": 0,
     "Y": 0,
-    "Width": 65,
-    "Height": 65,
+    "Width": 50,
+    "Height": 50,
     "Unlocked": false
   },
   {
@@ -51,8 +51,8 @@
     "Price": 2,
     "X": 0,
     "Y": 0,
-    "Width": 65,
-    "Height": 65,
+    "Width": 50,
+    "Height": 50,
     "Unlocked": false
   },
   {
@@ -65,8 +65,8 @@
     "Price": 3,
     "X": 0,
     "Y": 0,
-    "Width": 65,
-    "Height": 65,
+    "Width": 50,
+    "Height": 50,
     "Unlocked": false
   },
   {
@@ -79,8 +79,8 @@
     "Price": 2,
     "X": 0,
     "Y": 0,
-    "Width": 65,
-    "Height": 65,
+    "Width": 50,
+    "Height": 50,
     "Unlocked": false
   },
   {
@@ -93,8 +93,8 @@
     "Price": 3,
     "X": 0,
     "Y": 0,
-    "Width": 65,
-    "Height": 65,
+    "Width": 50,
+    "Height": 50,
     "Unlocked": false
   },
   {
@@ -107,8 +107,8 @@
     "Price": 3,
     "X": 0,
     "Y": 0,
-    "Width": 65,
-    "Height": 65,
+    "Width": 50,
+    "Height": 50,
     "Unlocked": false
   }
 ]
