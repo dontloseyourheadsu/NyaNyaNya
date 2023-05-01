@@ -40,6 +40,10 @@ h1:focus {
     outline: none;
 }
 
+img[src=""] {
+    display: none;
+}
+
 h1 {
     font-size: 3em;
     color: white;
@@ -244,7 +248,7 @@ li {
 }
 
 .unactive-planet {
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
 }
 
@@ -334,7 +338,7 @@ li {
     color: rgba(255,255,255, 0.7);
     width: 100%;
     font-family: PressStart2P;
-    font-size: 9px;
+    font-size: 7px;
 }
 
 .container-selected {

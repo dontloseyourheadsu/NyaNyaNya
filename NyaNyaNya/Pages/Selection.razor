@@ -1,4 +1,5 @@
 ﻿@page "/selection/{IsPlayMusic:bool}/{PlanetId:int}"
+@inject NavigationManager NavigationManager
 
 <div class="d-flex flex-column justify-content-center align-items-center h-100 w-100 main-menu">
 
@@ -8,21 +9,19 @@
 
     <h1>Select Cats</h1>
 
+    <div class="@($"menu-frame d-flex justify-content-between align-items-center position-absolute {menuFrameClass}")" style="z-index: 6;">
+        <img class="cursor-pointer close-icon" src="images/icons/exit.jpg" @onclick="@SwitchMenuFrame">
+        <p style="font-family: PressStart2P; font-size: 16px; color: white; transform: translateX(25%);">Select at least one cat</p>
+    </div>
+
     <div class="mt-2 d-grid cols-3 auto-rows">
         @for (int i = 0; i < cats.Count; i++)
         {
             var catIndex = i;
 
-            <div class="grid-item @containerClasses[i]" @onclick="@(e => SelectCat(e, catIndex))">
+            <div class="grid-item @containerClasses[catIndex]" @onclick="@(e => SelectCat(e, catIndex))">
                 <img src="@cats[i].Image"/>
             </div>
-        }
-    </div>
-
-    <div style="color: white;">
-        @foreach(var selectedCat in containerClasses)
-        {
-            <span>@selectedCat</span>
         }
     </div>
 
@@ -33,13 +32,17 @@
 
             <div class="d-flex flex-column" style="height: 100px; width: 90px; z-index: 5;" @onclick="@(e => DrawCat(e, selectedDrawer))">
                 <div class="cat-container d-flex align-items-center justify-content-center" style="height: 80%; width: 100%;">
-                    <img src="@catDrawer[i].Image" alt="@catDrawer[i].Name" style="width: 75%; height: 75%;" />
+                    <img src="@catDrawer[i].Image" style="width: 75%; height: 75%;" />
                 </div>
                 <span class="cat-container d-flex align-items-center justify-content-center" style="height: 20%; width: 100%;">@catDrawer[i].Name</span>
             </div>
         }
     </div>
 
+    <NavLink class="cursor-pointer position-absolute" style="right: 20px; top: 20px;" @onclick="@GoTo">
+        <Button Text="Play">
+        </Button>
+    </NavLink>
 </div>
 
 <MusicPlayer Track="GreenTea" PlayMusic="IsPlayMusic" />
@@ -55,15 +58,17 @@
     private List<bool> selectedCats;
     private List<string> containerClasses;
     private string containerSelected = "container-selected";
+    private string menuFrameClass = "menu-frame-off";
+    private bool menuFramOn = false;
 
     private List<Cat> catDrawer = new List<Cat>();
 
     private bool catIsSelected = false;
     private int selectedCatIndex = 0;
+    string rootpath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "wwwroot");
 
     public Selection()
     {
-        string rootpath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "wwwroot");
         using (StreamReader r = new StreamReader(rootpath + "/database/cats.json"))
         {
             string json = r.ReadToEnd();
@@ -87,7 +92,7 @@
 
         for (int i = 0; i < 6; i++)
         {
-            catDrawer.Add(new Cat());
+            catDrawer.Add(new Cat() { Name = "" });
         }
     }
 
@@ -115,12 +120,46 @@
         else if (!catIsSelected && cats.Any(p => p.Name == catDrawer[selectedDrawer].Name))
         {
             selectedCats[cats.FindIndex(p => p.Name == catDrawer[selectedDrawer].Name)] = false;
-            catDrawer[selectedDrawer] = new Cat();
+            catDrawer[selectedDrawer] = new Cat() { Name = "", Image = ""};
         }
         catIsSelected = false;
         for (int i = 0; i < containerClasses.Count; i++)
         {
             containerClasses[i] = "";
         }
+    }
+
+    private void GoTo(MouseEventArgs e)
+    {
+        bool noCatSelected = true;
+
+        for (int i = 0; i < catDrawer.Count; i++)
+        {
+            if (catDrawer[i].Name != "")
+            {
+                noCatSelected = false;
+            }
+        }
+
+        if(noCatSelected)
+        {
+            SwitchMenuFrame();
+
+            return;
+        }
+
+        using (StreamWriter file = File.CreateText(rootpath + "/database/selected-cats.json"))
+        {
+            JsonSerializer serializer = new JsonSerializer();
+            serializer.Serialize(file, catDrawer);
+        }
+
+        NavigationManager.NavigateTo($"/gameplay/{IsPlayMusic}/{PlanetId}");
+    }
+
+    protected void SwitchMenuFrame()
+    {
+        menuFramOn = !menuFramOn;
+        menuFrameClass = menuFramOn ? "" : "menu-frame-off";
     }
 }

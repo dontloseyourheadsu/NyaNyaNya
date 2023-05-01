@@ -37,6 +37,10 @@
       "PackagePath": "staticwebassets\\database\\rats.json"
     },
     {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\database\\selected-cats.json",
+      "PackagePath": "staticwebassets\\database\\selected-cats.json"
+    },
+    {
       "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\backgrounds\\background-100.jpg",
       "PackagePath": "staticwebassets\\images\\backgrounds\\background-100.jpg"
     },
@@ -143,6 +147,26 @@
     {
       "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\planets\\planet4.png",
       "PackagePath": "staticwebassets\\images\\planets\\planet4.png"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\rats\\cyber-rat.png",
+      "PackagePath": "staticwebassets\\images\\rats\\cyber-rat.png"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\rats\\giganto-rat.png",
+      "PackagePath": "staticwebassets\\images\\rats\\giganto-rat.png"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\rats\\portal-rat.png",
+      "PackagePath": "staticwebassets\\images\\rats\\portal-rat.png"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\rats\\robo-rat.png",
+      "PackagePath": "staticwebassets\\images\\rats\\robo-rat.png"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\rats\\runne-rat.png",
+      "PackagePath": "staticwebassets\\images\\rats\\runne-rat.png"
     },
     {
       "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\index.html",
