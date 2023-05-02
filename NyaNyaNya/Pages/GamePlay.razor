@@ -8,24 +8,67 @@
 
     <div class="@($"menu-frame d-flex justify-content-between align-items-center position-absolute {menuFrameClass}")">
         <img class="cursor-pointer close-icon" src="images/icons/exit.jpg" @onclick="@SwitchMenuFrame">
-        <span class="exit-button justify-content-center cursor-pointer">Exit</span>
+        <NavLink href="@($"/{IsPlayMusic}")" class="cursor-pointer">
+            <span class="exit-button justify-content-center cursor-pointer">Exit</span>
+        </NavLink>
     </div>
 
     <span class="position-absolute game-box config-box cursor-pointer justify-content-center" @onclick="@SwitchMenuFrame">
         <img src="images/icons/pixel-paw.png" alt="paw" style="height: 90%; width: 90%;"/>
     </span>
 
+    <div class="castle"></div>
+
+    @for(int i = 0; i < platformsY.Count; i++)
+    {
+        @for (int j = 0; j < platformsX.Count; j++)
+        {
+            var y = i;
+            var x = j;
+            int platformVersion = 0;
+
+            if (x % 2 == 0)
+            {
+                platformVersion = y % 2 == 0 ? 1 : 2;
+            }
+            else
+            {
+                platformVersion = y % 2 == 0 ? 2 : 1;
+            }
+
+            <div class="platform platform-@platformVersion position-absolute" style="@($"top: {platformsY[y]}px; left: {platformsX[x]}px;")" @onclick="@(e => PlaceCat(e, x, y))"></div>
+        }
+    }
+
+    @for(int i = 0; i < platformsY.Count; i++)
+    {
+        @for (int j = 0; j < platformsX.Count; j++)
+        {
+            var y = i;
+            var x = j;
+            var cat = catsOnField[y, x];
+
+            if (cat != null)
+            {
+                <img class="position-absolute" src="@cat.Image" 
+                style="@($"top: {cat.Y}px; left: {cat.X}px; width: {cat.Width}px; height: {cat.Height}px;")"/>
+            }
+        }
+    }
+
+
+
     <div class="d-flex justify-content-center align-items-center position-absolute center-absolute" style="gap: 10px; bottom: 0;">
         @for (int i = 0; i < 6; i++)
         {
             var selectedDrawer = i;
 
-                <div class="d-flex flex-column" style="height: 80px; width: 70px; z-index: 5;">
+            <div class="d-flex flex-column @containerClasses[selectedDrawer]" style="height: 80px; width: 70px; z-index: 5;" @onclick="@(e => SelectCat(e, selectedDrawer))">
                     <div class="cat-container d-flex align-items-center justify-content-center" style="height: 80%; width: 100%;">
                         <img src="@catDrawer[i].Image" style="width: 75%; height: 75%;" />
                     </div>
                     <span class="cat-container d-flex align-items-center justify-content-center" style="height: 20%; width: 100%; font-size: 5px;">@catDrawer[i].Name</span>
-                </div>
+            </div>
         }
     </div>
 </div>
@@ -42,12 +85,22 @@
     [Parameter]
     public int CatNames { get; set; }
 
-    private bool menuFramOn = false;
+    private int energy = 1;
+
+    private List<int> platformsX = new List<int>();
+    private List<int> platformsY = new List<int>();
+
+    private Cat[,]? catsOnField = new Cat[4,8];
+
     private string menuFrameClass = "menu-frame-off";
+    private bool menuFrameOn = false;
+
+    private List<string> containerClasses = new List<string>();
+    private string containerSelected = "drawer-selected";
+    private Cat selectedCat;
+    private bool catIsSelected = false;
 
     private List<Cat> catDrawer = new List<Cat>();
-
-    private int energy = 0;
 
     string rootpath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "wwwroot");
 
@@ -61,11 +114,62 @@
         }
 
         File.WriteAllText(rootpath + "/database/selected-cats.json", string.Empty);
+
+        for (int i = 0; i < 4; i++)
+        {
+            platformsY.Add(20 + (i * 80));
+        }
+
+        for (int i = 0; i < 8; i++)
+        {
+            platformsX.Add(180 + (i * 80));
+        }
+
+        for (int i = 0; i < 6; i++)
+        {
+            containerClasses.Add("");
+        }
+
+        selectedCat = new Cat() { Name = "", Image = "" };
     }
 
     protected void SwitchMenuFrame()
     {
-        menuFramOn = !menuFramOn;
-        menuFrameClass = menuFramOn ? "" : "menu-frame-off";
+        menuFrameOn = !menuFrameOn;
+        menuFrameClass = menuFrameOn ? "" : "menu-frame-off";
+    }
+
+    private void SelectCat(MouseEventArgs e, int selectedDrawer)
+    {
+        for(int i = 0; i < 6; i++)
+        {
+            containerClasses[i] = "";
+        }
+
+        containerClasses[selectedDrawer] = containerSelected;
+
+        selectedCat = catDrawer[selectedDrawer];
+        catIsSelected = true;
+    }
+
+    private void PlaceCat(MouseEventArgs e, int x, int y)
+    {
+        if (catsOnField[y, x] == null || catsOnField[y, x].Name == "")
+        {
+            if (selectedCat.Price <= energy)
+            {
+                catsOnField[y, x] = selectedCat;
+                catsOnField[y, x].X = platformsX[x] + 12;
+                catsOnField[y, x].Y = platformsY[y];
+                energy -= selectedCat.Price;
+            }
+        }
+
+        catIsSelected = false;
+        for (int i = 0; i < 6; i++)
+        {
+            containerClasses[i] = "";
+        }
+        selectedCat = new Cat() { Name = "", Image = "" };
     }
 }

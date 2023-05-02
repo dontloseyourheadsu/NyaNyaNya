@@ -111,9 +111,14 @@
 
     private void DrawCat(MouseEventArgs e, int selectedDrawer)
     {
-        //add cat to drawer if it hasnt been selected, a cat has been selected and the drawer doesnt have the cat selected
         if (!selectedCats[selectedCatIndex] && catIsSelected && !catDrawer.Any(p => p.Name == cats[selectedCatIndex].Name))
         {
+            if(catDrawer[selectedDrawer].Name != "")
+            {
+                var catIndex = cats.FindIndex(p => p.Name == catDrawer[selectedDrawer].Name);
+                selectedCats[catIndex] = false;
+            }
+
             catDrawer[selectedDrawer] = cats[selectedCatIndex];
             selectedCats[selectedCatIndex] = true;
         }
