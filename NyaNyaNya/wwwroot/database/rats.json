@@ -1,5 +1,4 @@
 [
-
   {
     "Id": 0,
     "Name": "Cyber Rat",
@@ -21,8 +20,8 @@
     "Name": "Robo Rat",
     "Image": "images/rats/robo-rat.png",
     "Life": 5,
-    "Attack": 2,
-    "Speed": 1,
+    "Attack": 1,
+    "Speed": 2,
     "X": 0,
     "Y": 0,
     "Width": 50,
@@ -34,7 +33,7 @@
   },
   {
     "Id": 2,
-    "Name": "Runne Rat",
+    "Name": "Runner Rat",
     "Image": "images/rats/runne-rat.png",
     "Life": 3,
     "Attack": 1,
@@ -53,8 +52,8 @@
     "Name": "Portal Rat",
     "Image": "images/rats/portal-rat.png",
     "Life": 4,
-    "Attack": 2,
-    "Speed": 2,
+    "Attack": 0,
+    "Speed": 0,
     "X": 0,
     "Y": 0,
     "Width": 50,
