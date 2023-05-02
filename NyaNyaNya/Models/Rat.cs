@@ -23,6 +23,7 @@ namespace NyaNyaNya.Models
         public List<int> Worlds { get; set; }
         public bool Alive { get; set; }
         public bool WasReleasedDuringWave { get; set; }
+        public bool HasLanded { get; set; }
 
         public Rat() { }
         public Rat(Rat rat)
@@ -41,6 +42,7 @@ namespace NyaNyaNya.Models
             Worlds = rat.Worlds;
             Alive = true;
             WasReleasedDuringWave = true;
+            HasLanded = false;
         }
     }
 }

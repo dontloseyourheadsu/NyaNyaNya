@@ -1,7 +1,7 @@
 ﻿@page "/gameplay/{IsPlayMusic:bool}/{PlanetId:int}"
 
 <div class="d-flex flex-column justify-content-center align-items-center h-100 w-100 game-bg"
-    style="@($"background: url('images/backgrounds/background-{PlanetId}.jpg'); background-size: 100% 100%;")">
+     style="@($"background: url('images/backgrounds/background-{PlanetId}.jpg'); background-size: 100% 100%;")">
     <span class="position-absolute game-box energy-box">
         <img src="images/icons/thunder.png" alt="thunder" style="width: 45px; height: 70px;"> @energy
     </span>
@@ -14,12 +14,13 @@
     </div>
 
     <span class="position-absolute game-box config-box cursor-pointer justify-content-center" @onclick="@SwitchMenuFrame">
-        <img src="images/icons/pixel-paw.png" alt="paw" style="height: 90%; width: 90%;"/>
+        <img src="images/icons/pixel-paw.png" alt="paw" style="height: 90%; width: 90%;" />
     </span>
 
     <div class="castle"></div>
 
-    @for(int i = 0; i < platformsY.Count; i++)
+    <!--platforms-->
+    @for (int i = 0; i < platformsY.Count; i++)
     {
         @for (int j = 0; j < platformsX.Count; j++)
         {
@@ -40,7 +41,8 @@
         }
     }
 
-    @for(int i = 0; i < platformsY.Count; i++)
+    <!--cats-->
+    @for (int i = 0; i < platformsY.Count; i++)
     {
         @for (int j = 0; j < platformsX.Count; j++)
         {
@@ -50,26 +52,26 @@
 
             if (cat != null && cat.Name != null && cat.Name != "")
             {
-                <img class="position-absolute" src="@cat.Image" 
-                style="@($"top: {cat.Y}px; left: {cat.X}px; width: {cat.Width}px; height: {cat.Height}px;")"/>
+                <img class="position-absolute" src="@cat.Image"
+         style="@($"top: {cat.Y}px; left: {cat.X}px; width: {cat.Width}px; height: {cat.Height}px;")" />
 
-                for(int k = 0; k < cat.Projectiles.Length; k++)
+                for (int k = 0; k < cat.Projectiles.Length; k++)
                 {
                     if (!cat.Projectiles[k]) continue;
                     var pId = k;
 
-                    switch(cat.Name)
+                    switch (cat.Name)
                     {
                         case "Space Cat":
                             <div class="position-absolute" style="@($"top: {cat.ProjectilesY[pId]}px; left: {cat.ProjectilesX[pId]}px;")" @onclick="@(e => Recharge(e, x, y, pId))">
                                 <img class="position-absolute" src="images/projectiles/energy-ball.png"
-                                style="@($"width: 30px; height: 30px;")" />
+             style="@($"width: 30px; height: 30px;")" />
                             </div>
                             break;
                         case "Wise Cat":
                             <div class="position-absolute" style="@($"top: {cat.Y}px; left: {cat.X}px;")" @onclick="@(e => Recharge(e, x, y, pId))">
                                 <img class="position-absolute animate-battery" src="images/projectiles/battery.png"
-                                style="@($"width: 30px; height: 30px;")" />
+             style="@($"width: 30px; height: 30px;")" />
                             </div>
                             break;
                     }
@@ -79,28 +81,30 @@
         }
     }
 
-    @for(int i = 0; i < ratsOnField.Length; i++)
+    <!--rats-->
+    @for (int i = 0; i < ratsOnField.Length; i++)
     {
         var ratIndex = i;
         var rat = ratsOnField[ratIndex];
 
         if (rat != null)
         {
-            <img class="position-absolute" src="@rat.Image" 
-            style="@($"top: {rat.Y}px; left: {rat.X}px; width: {rat.Width}px; height: {rat.Height}px;")"/>
+            <img class="position-absolute" src="@rat.Image"
+         style="@($"top: {rat.Y}px; left: {rat.X}px; width: {rat.Width}px; height: {rat.Height}px;")" />
         }
     }
 
+    <!--drawer-->
     <div class="d-flex justify-content-center align-items-center position-absolute center-absolute" style="gap: 10px; bottom: 0;">
         @for (int i = 0; i < 6; i++)
         {
             var selectedDrawer = i;
 
             <div class="d-flex flex-column @containerClasses[selectedDrawer]" style="height: 80px; width: 70px; z-index: 5;" @onclick="@(e => SelectCat(e, selectedDrawer))">
-                    <div class="cat-container d-flex align-items-center justify-content-center" style="height: 80%; width: 100%;">
-                        <img src="@catDrawer[i].Image" style="width: 75%; height: 75%;" />
-                    </div>
-                    <span class="cat-container d-flex align-items-center justify-content-center" style="height: 20%; width: 100%; font-size: 5px;">@catDrawer[i].Name</span>
+                <div class="cat-container d-flex align-items-center justify-content-center" style="height: 80%; width: 100%;">
+                    <img src="@catDrawer[i].Image" style="width: 75%; height: 75%;" />
+                </div>
+                <span class="cat-container d-flex align-items-center justify-content-center" style="height: 20%; width: 100%; font-size: 5px;">@catDrawer[i].Name</span>
             </div>
         }
     </div>
@@ -129,7 +133,7 @@
     private List<int> platformsX = new List<int>();
     private List<int> platformsY = new List<int>();
 
-    private Cat[,]? catsOnField = new Cat[4,8];
+    private Cat[,]? catsOnField = new Cat[4, 8];
     private Rat[]? ratsOnField = new Rat[10];
     private bool[] ratsCanFall = new bool[10];
     private int[] ratPlatformFallIndex = new int[10];
@@ -192,13 +196,13 @@
         {
             for (int j = 0; j < platformsY.Count; j++)
             {
-                catsOnField[j,i] = new Cat() { Name = "", Image = "" };
+                catsOnField[j, i] = new Cat() { Name = "", Image = "" };
             }
         }
 
         selectedCat = new Cat() { Name = "", Image = "" };
 
-        for(int i = 0; i < 10; i++)
+        for (int i = 0; i < 10; i++)
         {
             ratsOnField[i] = new Rat(rats[new Random().Next(0, rats.Count)]);
             ratsCanFall[i] = false;
@@ -220,7 +224,7 @@
 
     private void SelectCat(MouseEventArgs e, int selectedDrawer)
     {
-        for(int i = 0; i < 6; i++)
+        for (int i = 0; i < 6; i++)
         {
             containerClasses[i] = "";
         }
@@ -261,9 +265,9 @@
 
     private void ReleaseProjectiles()
     {
-        for(int i = 0; i < platformsX.Count; i++)
+        for (int i = 0; i < platformsX.Count; i++)
         {
-            for(int j = 0; j < platformsY.Count; j++)
+            for (int j = 0; j < platformsY.Count; j++)
             {
                 if (catsOnField[j, i].Name == null || catsOnField[j, i].Name == "") continue;
 
@@ -280,7 +284,7 @@
                     }
                 }
 
-                switch(catsOnField[j,i].Name)
+                switch (catsOnField[j, i].Name)
                 {
                     case "Space Cat":
                         for (int k = 0; k < catsOnField[j, i].Projectiles.Length; k++)
@@ -298,7 +302,7 @@
                                     catsOnField[j, i].ProjectilesX[k] += 3;
                                 }
 
-                                CheckProjectileCollision(i,j,k);
+                                CheckProjectileCollision(i, j, k);
                             }
                         }
                         break;
@@ -313,11 +317,11 @@
     private void AnimateRatsFall()
     {
         bool firstLoop = true;
-        for(int i = 0; i < ratsOnField.Length; i++)
+        for (int i = 0; i < ratsOnField.Length; i++)
         {
-            if(!isWave)
+            if (!isWave)
             {
-                if(gameSeconds % 10 == 0 && ratFallIndex < ratsOnField.Length && firstLoop)
+                if (gameSeconds % 10 == 0 && ratFallIndex < ratsOnField.Length && firstLoop)
                 {
                     ratsCanFall[ratFallIndex] = true;
                     ratFallIndex++;
@@ -326,10 +330,10 @@
             }
             else
             {
-                if(firstWaveLoop)
+                if (firstWaveLoop)
                 {
                     ratsCanFall[i] = true;
-                    if(i == ratsOnField.Length - 1)
+                    if (i == ratsOnField.Length - 1)
                     {
                         firstWaveLoop = false;
                     }
@@ -344,6 +348,7 @@
             if (ratsOnField[i].Y >= platformsY[ratPlatformFallIndex[i]] && ratsOnField[i].Y <= platformsY[ratPlatformFallIndex[i]] + 80)
             {
                 ratsCanFall[i] = false;
+                ratsOnField[i].HasLanded = true;
             }
         }
     }
@@ -361,10 +366,10 @@
 
             var rat = ratsOnField[i];
 
-            switch(cat.Name)
+            switch (cat.Name)
             {
                 case "Space Cat":
-                    if((pY >= rat.Y && pY <= rat.Y + rat.Height) || (rat.Y >= pY && rat.Y <= pY + 30))
+                    if ((pY >= rat.Y && pY <= rat.Y + rat.Height) || (rat.Y >= pY && rat.Y <= pY + 30))
                     {
                         if ((pX >= rat.X && pX <= rat.X + rat.Width) || (rat.X >= pX && rat.X <= pX + 30))
                         {
@@ -391,6 +396,18 @@
                 ratsOnField[i].X = rats[ratIndex].X;
                 ratsOnField[i].Y = rats[ratIndex].Y;
                 ratsOnField[i].WasReleasedDuringWave = false;
+                ratsOnField[i].HasLanded = false;
+            }
+        }
+    }
+
+    private void MoveRats()
+    {
+        for (int i = 0; i < ratsOnField.Length; i++)
+        {
+            if (ratsOnField[i].HasLanded)
+            {
+                ratsOnField[i].X -= ratsOnField[i].Speed;
             }
         }
     }
@@ -406,6 +423,7 @@
                 AnimateRatsFall();
                 ReleaseProjectiles();
                 CheckRatLife();
+                MoveRats();
 
                 gameSeconds += gameSpeed;
                 StateHasChanged();
