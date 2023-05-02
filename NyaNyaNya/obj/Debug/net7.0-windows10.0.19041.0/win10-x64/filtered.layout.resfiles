@@ -68,6 +68,7 @@ wwwroot\database\cats.json
 wwwroot\database\planets.json
 wwwroot\database\rats.json
 wwwroot\database\selected-cats.json
+wwwroot\images\backgrounds\background-0.jpg
 wwwroot\images\backgrounds\background-100.jpg
 wwwroot\images\backgrounds\cat-container.jpg
 wwwroot\images\backgrounds\menu-frame.png
@@ -97,6 +98,7 @@ wwwroot\images\planets\planet3.png
 wwwroot\images\planets\planet4.png
 wwwroot\images\plataforms\001_Plataform.png
 wwwroot\images\plataforms\002_Plataform.png
+wwwroot\images\proyectiles\battery.png
 wwwroot\images\rats\cyber-rat.png
 wwwroot\images\rats\giganto-rat.png
 wwwroot\images\rats\portal-rat.png

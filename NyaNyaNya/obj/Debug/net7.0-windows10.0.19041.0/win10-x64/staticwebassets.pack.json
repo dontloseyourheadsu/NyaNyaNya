@@ -41,6 +41,10 @@
       "PackagePath": "staticwebassets\\database\\selected-cats.json"
     },
     {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\backgrounds\\background-0.jpg",
+      "PackagePath": "staticwebassets\\images\\backgrounds\\background-0.jpg"
+    },
+    {
       "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\backgrounds\\background-100.jpg",
       "PackagePath": "staticwebassets\\images\\backgrounds\\background-100.jpg"
     },
@@ -155,6 +159,10 @@
     {
       "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\plataforms\\002_Plataform.png",
       "PackagePath": "staticwebassets\\images\\plataforms\\002_Plataform.png"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\proyectiles\\battery.png",
+      "PackagePath": "staticwebassets\\images\\proyectiles\\battery.png"
     },
     {
       "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\rats\\cyber-rat.png",
