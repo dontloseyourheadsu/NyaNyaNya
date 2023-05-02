@@ -19,5 +19,6 @@ namespace NyaNyaNya.Models
         public int Width { get; set; }
         public int Height { get; set; }
         public bool Unlocked { get; set; }
+        public List<int> Worlds { get; set; }
     }
 }

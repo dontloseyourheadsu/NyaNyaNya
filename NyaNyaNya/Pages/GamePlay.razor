@@ -1,12 +1,12 @@
 ﻿@page "/gameplay/{IsPlayMusic:bool}/{PlanetId:int}"
 
 <div class="d-flex flex-column justify-content-center align-items-center h-100 w-100 game-bg"
-    style="@($"background: url('images/backgrounds/background-{PlanetId}.jpg');")">
+    style="@($"background: url('images/backgrounds/background-{PlanetId}.jpg'); background-size: 100% 100%;")">
     <span class="position-absolute game-box energy-box">
         <img src="images/icons/thunder.png" alt="thunder" style="width: 45px; height: 70px;"> @energy
     </span>
 
-    <div class="@($"menu-frame d-flex justify-content-between align-items-center position-absolute {menuFrameClass}")">
+    <div class="@($"menu-frame d-flex justify-content-between align-items-center position-absolute {menuFrameClass}")" style="z-index: 6;">
         <img class="cursor-pointer close-icon" src="images/icons/exit.jpg" @onclick="@SwitchMenuFrame">
         <NavLink href="@($"/{IsPlayMusic}")" class="cursor-pointer">
             <span class="exit-button justify-content-center cursor-pointer">Exit</span>
@@ -86,11 +86,14 @@
     public int CatNames { get; set; }
 
     private int energy = 1;
+    protected int frame = 1;
+    protected float gameSpeed = 1;
 
     private List<int> platformsX = new List<int>();
     private List<int> platformsY = new List<int>();
 
     private Cat[,]? catsOnField = new Cat[4,8];
+    private List<Rat> ratsOnField = new List<Rat>();
 
     private string menuFrameClass = "menu-frame-off";
     private bool menuFrameOn = false;
@@ -101,6 +104,7 @@
     private bool catIsSelected = false;
 
     private List<Cat> catDrawer = new List<Cat>();
+    private List<Rat> rats = new List<Rat>();
 
     string rootpath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "wwwroot");
 
@@ -113,11 +117,19 @@
             catDrawer = catsTemp;
         }
 
+        using (StreamReader r = new StreamReader(rootpath + "/database/rats.json"))
+        {
+            string json = r.ReadToEnd();
+            var tempRats = JsonConvert.DeserializeObject<List<Rat>>(json);
+
+            rats = tempRats.Where(r => r.Worlds.Contains(PlanetId)).ToList();
+        }
+
         File.WriteAllText(rootpath + "/database/selected-cats.json", string.Empty);
 
         for (int i = 0; i < 4; i++)
         {
-            platformsY.Add(20 + (i * 80));
+            platformsY.Add(30 + (i * 80));
         }
 
         for (int i = 0; i < 8; i++)
@@ -171,5 +183,37 @@
             containerClasses[i] = "";
         }
         selectedCat = new Cat() { Name = "", Image = "" };
+    }
+
+
+
+    protected void NextFrame()
+    {
+        if (frame == int.MaxValue)
+        {
+            frame = 0;
+        }
+        else
+        {
+            frame++;
+        }
+
+        //CheckForCollisions();
+        //animate cats
+        //animate rats
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            while (true)
+            {
+                await Task.Delay((int)(1000 * gameSpeed));
+
+                NextFrame();
+                StateHasChanged();
+            }
+        }
     }
 }
