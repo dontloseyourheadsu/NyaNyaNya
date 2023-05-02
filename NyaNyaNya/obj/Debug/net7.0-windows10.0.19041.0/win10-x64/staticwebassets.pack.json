@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\css\\fonts\\SpaceGrotesk-Regular.ttf"
     },
     {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\database\\awards.json",
+      "PackagePath": "staticwebassets\\database\\awards.json"
+    },
+    {
       "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\database\\cats.json",
       "PackagePath": "staticwebassets\\database\\cats.json"
     },

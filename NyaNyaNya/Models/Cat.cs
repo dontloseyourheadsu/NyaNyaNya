@@ -21,6 +21,9 @@ namespace NyaNyaNya.Models
         public int Height { get; set; }
         public bool Unlocked { get; set; }
         public bool[] Projectiles { get; set; }
+        public bool[] ProjectilesFirstActive { get; set; }
+        public int[] ProjectilesX { get; set; }
+        public int[] ProjectilesY { get; set; }
         public int ProjectileIndex { get; set; }
         public bool ProjectileFirstLoop { get; set; }
 
@@ -40,9 +43,16 @@ namespace NyaNyaNya.Models
             Height = cat.Height;
             Unlocked = cat.Unlocked;
             Projectiles = new bool[5];
+            ProjectilesFirstActive= new bool[5];
+            ProjectilesX = new int[5];
+            ProjectilesY = new int[5];
+
             for(int i = 0; i < 5; i++)
             {
                 Projectiles[i] = false;
+                ProjectilesFirstActive[i] = true;
+                ProjectilesX[i] = 0;
+                ProjectilesY[i] = 0;
             }
             ProjectileIndex = 0;
             ProjectileFirstLoop = true;

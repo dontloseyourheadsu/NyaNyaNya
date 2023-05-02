@@ -21,6 +21,8 @@ namespace NyaNyaNya.Models
         public int Height { get; set; }
         public bool Unlocked { get; set; }
         public List<int> Worlds { get; set; }
+        public bool Alive { get; set; }
+        public bool WasReleasedDuringWave { get; set; }
 
         public Rat() { }
         public Rat(Rat rat)
@@ -37,6 +39,8 @@ namespace NyaNyaNya.Models
             Height = rat.Height;
             Unlocked = rat.Unlocked;
             Worlds = rat.Worlds;
+            Alive = true;
+            WasReleasedDuringWave = true;
         }
     }
 }
