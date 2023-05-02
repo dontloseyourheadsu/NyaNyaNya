@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,5 +21,22 @@ namespace NyaNyaNya.Models
         public int Height { get; set; }
         public bool Unlocked { get; set; }
         public List<int> Worlds { get; set; }
+
+        public Rat() { }
+        public Rat(Rat rat)
+        {
+            Id = rat.Id;
+            Name = rat.Name;
+            Image = rat.Image;
+            Life = rat.Life;
+            Attack = rat.Attack;
+            Speed = rat.Speed;
+            X = rat.X;
+            Y = rat.Y;
+            Width = rat.Width;
+            Height = rat.Height;
+            Unlocked = rat.Unlocked;
+            Worlds = rat.Worlds;
+        }
     }
 }

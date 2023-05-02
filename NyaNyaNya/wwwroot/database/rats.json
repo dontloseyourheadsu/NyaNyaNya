@@ -6,13 +6,13 @@
     "Life": 4,
     "Attack": 1,
     "Speed": 2,
-    "X": 0,
-    "Y": 0,
+    "X": 740,
+    "Y": -80,
     "Width": 50,
     "Height": 50,
     "Unlocked": true,
     "Worlds": [
-      0, 100
+      0, 1, 2, 3, 4, 100
     ]
   },
   {
@@ -22,13 +22,16 @@
     "Life": 5,
     "Attack": 1,
     "Speed": 2,
-    "X": 0,
-    "Y": 0,
+    "X": 740,
+    "Y": -80,
     "Width": 50,
     "Height": 50,
     "Unlocked": true,
     "Worlds": [
-      1
+      1,
+      2,
+      3,
+      4
     ]
   },
   {
@@ -38,13 +41,14 @@
     "Life": 3,
     "Attack": 1,
     "Speed": 4,
-    "X": 0,
-    "Y": 0,
+    "X": 740,
+    "Y": -80,
     "Width": 50,
     "Height": 50,
     "Unlocked": false,
     "Worlds": [
-      2
+      2,
+      4
     ]
   },
   {
@@ -54,8 +58,8 @@
     "Life": 4,
     "Attack": 0,
     "Speed": 0,
-    "X": 0,
-    "Y": 0,
+    "X": 740,
+    "Y": -80,
     "Width": 50,
     "Height": 50,
     "Unlocked": false,
@@ -70,13 +74,13 @@
     "Life": 15,
     "Attack": 3,
     "Speed": 1,
-    "X": 0,
-    "Y": 0,
+    "X": 740,
+    "Y": -80,
     "Width": 60,
     "Height": 60,
     "Unlocked": false,
     "Worlds": [
-      5,
+      4,
       100
     ]
   }

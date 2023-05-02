@@ -20,5 +20,32 @@ namespace NyaNyaNya.Models
         public int Width { get; set; }
         public int Height { get; set; }
         public bool Unlocked { get; set; }
+        public bool[] Projectiles { get; set; }
+        public int ProjectileIndex { get; set; }
+        public bool ProjectileFirstLoop { get; set; }
+
+        public Cat() { }
+        public Cat(Cat cat)
+        {
+            Id = cat.Id;
+            Name = cat.Name;
+            Image = cat.Image;
+            Life = cat.Life;
+            Attack = cat.Attack;
+            Recharge = cat.Recharge;
+            Price = cat.Price;
+            X = cat.X;
+            Y = cat.Y;
+            Width = cat.Width;
+            Height = cat.Height;
+            Unlocked = cat.Unlocked;
+            Projectiles = new bool[5];
+            for(int i = 0; i < 5; i++)
+            {
+                Projectiles[i] = false;
+            }
+            ProjectileIndex = 0;
+            ProjectileFirstLoop = true;
+        }
     }
 }

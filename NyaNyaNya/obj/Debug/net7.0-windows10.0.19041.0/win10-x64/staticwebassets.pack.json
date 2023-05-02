@@ -165,12 +165,12 @@
       "PackagePath": "staticwebassets\\images\\plataforms\\002_Plataform.png"
     },
     {
-      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\proyectiles\\001_Cat_Proyectil7.png",
-      "PackagePath": "staticwebassets\\images\\proyectiles\\001_Cat_Proyectil7.png"
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\projectiles\\battery.png",
+      "PackagePath": "staticwebassets\\images\\projectiles\\battery.png"
     },
     {
-      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\proyectiles\\battery.png",
-      "PackagePath": "staticwebassets\\images\\proyectiles\\battery.png"
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\projectiles\\energy-ball.png",
+      "PackagePath": "staticwebassets\\images\\projectiles\\energy-ball.png"
     },
     {
       "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\rats\\cyber-rat.png",

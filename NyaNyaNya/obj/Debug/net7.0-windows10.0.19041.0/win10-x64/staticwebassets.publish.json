@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gD+REnbywkWM5hRK3963kGH5XhhAKrI7ZqzNfaPdyg8=",
+  "Hash": "wOiW3tfPg6cmbgfKfFs8PxRCo1w8rxPu3CY9iuS9IKg=",
   "Source": "NyaNyaNya",
   "BasePath": "/",
   "Mode": "Root",
@@ -731,12 +731,12 @@
       "OriginalItemSpec": "wwwroot\\images\\plataforms\\002_Plataform.png"
     },
     {
-      "Identity": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\proyectiles\\001_Cat_Proyectil7.png",
+      "Identity": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\projectiles\\battery.png",
       "SourceId": "NyaNyaNya",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "images/proyectiles/001_Cat_Proyectil7.png",
+      "RelativePath": "images/projectiles/battery.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -745,15 +745,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\proyectiles\\001_Cat_Proyectil7.png"
+      "OriginalItemSpec": "wwwroot\\images\\projectiles\\battery.png"
     },
     {
-      "Identity": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\proyectiles\\battery.png",
+      "Identity": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\projectiles\\energy-ball.png",
       "SourceId": "NyaNyaNya",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "images/proyectiles/battery.png",
+      "RelativePath": "images/projectiles/energy-ball.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -762,7 +762,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\proyectiles\\battery.png"
+      "OriginalItemSpec": "wwwroot\\images\\projectiles\\energy-ball.png"
     },
     {
       "Identity": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\rats\\cyber-rat.png",

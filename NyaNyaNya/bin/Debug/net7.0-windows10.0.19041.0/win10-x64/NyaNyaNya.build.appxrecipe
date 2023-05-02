@@ -883,11 +883,11 @@
     <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\plataforms\002_Plataform.png">
       <PackagePath>wwwroot\images\plataforms\002_Plataform.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\proyectiles\001_Cat_Proyectil7.png">
-      <PackagePath>wwwroot\images\proyectiles\001_Cat_Proyectil7.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\projectiles\battery.png">
+      <PackagePath>wwwroot\images\projectiles\battery.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\proyectiles\battery.png">
-      <PackagePath>wwwroot\images\proyectiles\battery.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\projectiles\energy-ball.png">
+      <PackagePath>wwwroot\images\projectiles\energy-ball.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\rats\cyber-rat.png">
       <PackagePath>wwwroot\images\rats\cyber-rat.png</PackagePath>

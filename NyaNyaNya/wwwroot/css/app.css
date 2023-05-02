@@ -367,3 +367,33 @@ li {
 .drawer-selected {
     border: 5px solid white;
 }
+
+.animate-battery {
+    background: white;
+    width: 30px;
+    height: 30px;
+    animation: animateBattery 1s linear forwards;
+    cursor: pointer;
+}
+
+@keyframes animateBattery {
+    0% {
+        transform: translate(0, 0); /* start at the origin */
+    }
+
+    25% {
+        transform: translate(12.5px, -25px); /* reach 1/4 of the distance, 1/2 of the height */
+    }
+
+    50% {
+        transform: translate(25px, -50px); /* reach 1/2 of the distance, full height */
+    }
+
+    75% {
+        transform: translate(37.5px, -25px); /* reach 3/4 of the distance, 1/2 of the height */
+    }
+
+    100% {
+        transform: translate(50px, 0); /* finish at the destination */
+    }
+}
