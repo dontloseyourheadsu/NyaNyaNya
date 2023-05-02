@@ -64,6 +64,7 @@ wwwroot\css\common.css
 wwwroot\css\fonts\BebasNeue-Regular.ttf
 wwwroot\css\fonts\PressStart2P-Regular.ttf
 wwwroot\css\fonts\SpaceGrotesk-Regular.ttf
+wwwroot\database\awards.json
 wwwroot\database\cats.json
 wwwroot\database\planets.json
 wwwroot\database\rats.json

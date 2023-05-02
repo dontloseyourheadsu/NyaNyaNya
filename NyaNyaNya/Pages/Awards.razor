@@ -9,16 +9,16 @@
     <h1>Awards</h1>
 
     <ul class="award-container m-2">
-        <li class="award">
+        <li class="award @awardClass[0]">
             Complete all main 5 planets
         </li>
-        <li class="award gained">
+        <li class="award @awardClass[1]">
             Complete extra planets
         </li>
-        <li class="award gained">
+        <li class="award @awardClass[2]">
             Complete extra planets
         </li>
-        <li class="award">
+        <li class="award @awardClass[3]">
             Unlock all space cats and space rats
         </li>
     </ul>
@@ -34,4 +34,33 @@
 @code {
     [Parameter]
     public bool IsPlayMusic { get; set; }
+
+    List<bool> awardActive;
+    List<string> awardClass = new List<string>();
+    string gainedAward = "gained";
+
+
+    string rootpath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "wwwroot");
+
+    public Awards()
+    {
+        using (StreamReader r = new StreamReader(rootpath + "/database/awards.json"))
+        {
+            string json = r.ReadToEnd();
+            var awardsTemp = JsonConvert.DeserializeObject<List<bool>>(json);
+            awardActive = awardsTemp;
+        }
+
+        for(int i = 0; i < awardActive.Count; i++)
+        {
+            if (awardActive[i])
+            {
+                awardClass.Add(gainedAward);
+            }
+            else
+            {
+                awardClass.Add("");
+            }
+        }
+    }
 }

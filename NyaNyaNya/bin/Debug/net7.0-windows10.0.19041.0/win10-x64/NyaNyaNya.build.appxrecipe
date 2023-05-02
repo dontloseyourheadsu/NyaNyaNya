@@ -778,6 +778,9 @@
     <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\css\fonts\SpaceGrotesk-Regular.ttf">
       <PackagePath>wwwroot\css\fonts\SpaceGrotesk-Regular.ttf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\database\awards.json">
+      <PackagePath>wwwroot\database\awards.json</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\database\cats.json">
       <PackagePath>wwwroot\database\cats.json</PackagePath>
     </AppxPackagedFile>
