@@ -11,7 +11,10 @@
     "Y": 0,
     "Width": 50,
     "Height": 50,
-    "Unlocked": true
+    "Unlocked": true,
+    "Worlds": [
+      0, 100
+    ]
   },
   {
     "Id": 1,
@@ -24,7 +27,10 @@
     "Y": 0,
     "Width": 50,
     "Height": 50,
-    "Unlocked": true
+    "Unlocked": true,
+    "Worlds": [
+      1
+    ]
   },
   {
     "Id": 2,
@@ -37,7 +43,10 @@
     "Y": 0,
     "Width": 50,
     "Height": 50,
-    "Unlocked": false
+    "Unlocked": false,
+    "Worlds": [
+      2
+    ]
   },
   {
     "Id": 3,
@@ -50,7 +59,10 @@
     "Y": 0,
     "Width": 50,
     "Height": 50,
-    "Unlocked": false
+    "Unlocked": false,
+    "Worlds": [
+      3
+    ]
   },
   {
     "Id": 4,
@@ -63,6 +75,10 @@
     "Y": 0,
     "Width": 60,
     "Height": 60,
-    "Unlocked": false
+    "Unlocked": false,
+    "Worlds": [
+      5,
+      100
+    ]
   }
 ]
