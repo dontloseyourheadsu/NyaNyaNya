@@ -53,8 +53,24 @@
       "PackagePath": "staticwebassets\\images\\backgrounds\\background-0.jpg"
     },
     {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\backgrounds\\background-1.jpg",
+      "PackagePath": "staticwebassets\\images\\backgrounds\\background-1.jpg"
+    },
+    {
       "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\backgrounds\\background-100.jpg",
       "PackagePath": "staticwebassets\\images\\backgrounds\\background-100.jpg"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\backgrounds\\background-2.jpg",
+      "PackagePath": "staticwebassets\\images\\backgrounds\\background-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\backgrounds\\background-3.jpg",
+      "PackagePath": "staticwebassets\\images\\backgrounds\\background-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\backgrounds\\background-4.jpg",
+      "PackagePath": "staticwebassets\\images\\backgrounds\\background-4.jpg"
     },
     {
       "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\backgrounds\\cat-container.jpg",

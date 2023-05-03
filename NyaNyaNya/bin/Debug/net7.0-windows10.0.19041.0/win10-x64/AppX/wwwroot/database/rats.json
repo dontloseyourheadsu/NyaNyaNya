@@ -48,7 +48,7 @@
     "Y": -80,
     "Width": 50,
     "Height": 50,
-    "Unlocked": false,
+    "Unlocked": true,
     "Worlds": [
       2,
       4
@@ -66,7 +66,7 @@
     "Y": -80,
     "Width": 50,
     "Height": 50,
-    "Unlocked": false,
+    "Unlocked": true,
     "Worlds": [
       3
     ]
@@ -83,7 +83,7 @@
     "Y": -80,
     "Width": 60,
     "Height": 60,
-    "Unlocked": false,
+    "Unlocked": true,
     "Worlds": [
       4,
       100

@@ -14,14 +14,14 @@
     </div>
 
     <div class="@($"menu-frame d-flex justify-content-between align-items-center position-absolute {lostFrameClass}")" style="z-index: 10;">
-        <p style="font-family: PressStart2P; font-size: 24px; color: white; transform: translateX(100%);">You Lost</p>
+        <p style="font-family: PressStart2P; font-size: 30px; color: white; transform: translateX(75%);">You Lost</p>
         <NavLink href="@($"/{IsPlayMusic}")" class="cursor-pointer">
             <span class="exit-button justify-content-center cursor-pointer">Exit</span>
         </NavLink>
     </div>
 
     <div class="@($"menu-frame d-flex justify-content-between align-items-center position-absolute {wonFrameClass}")" style="z-index: 10;">
-        <p style="font-family: PressStart2P; font-size: 24px; color: white; transform: translateX(100%);">You Won</p>
+        <p style="font-family: PressStart2P; font-size: 30px; color: white; transform: translateX(75%);">You Won</p>
         <NavLink href="@($"/{IsPlayMusic}")" class="cursor-pointer">
             <span class="exit-button justify-content-center cursor-pointer">Exit</span>
         </NavLink>
@@ -31,7 +31,9 @@
         <img src="images/icons/pixel-paw.png" alt="paw" style="height: 90%; width: 90%;" />
     </span>
 
-    <div class="castle"></div>
+    <div class="position-absolute" style="left: 50px; bottom: 125px;">
+        <img src="images/backgrounds/Castel.png" alt="castle" style="height: 200px; width: 200px;" />
+    </div>
 
     <!--platforms-->
     @for (int i = 0; i < platformsY.Count; i++)
@@ -122,12 +124,6 @@
             </div>
         }
     </div>
-    
-    
-        <p style="color: white; position: absolute; bottom: 0; left: 0;">
-            @gameSeconds | @planet.Waves | @isWave | @currentWave
-        </p>
-    
 </div>
 
 <MusicPlayer Track="Skate" PlayMusic="IsPlayMusic" />
@@ -268,9 +264,60 @@
         wonFrameOn = true;
         wonFrameClass = wonFrameOn ? "" : "menu-frame-off";
 
-        if (planetsForUse.Count > planet.Index + 1)
+        if (planetsForUse.Count > planet.Index + 1 && planetsForUse[planet.Index + 1].Index < 100)
         {
             planetsForUse[planet.Index + 1].IsActive = true;
+
+            List<Cat> catListForRewrite;
+            using (StreamReader r = new StreamReader(rootpath + "/database/cats.json"))
+            {
+                string json = r.ReadToEnd();
+                var tempCats = JsonConvert.DeserializeObject<List<Cat>>(json);
+
+                for (int i = 0; i < planetsForUse[planet.Index + 1].Index*2; i++)
+                {
+                    if(i < tempCats.Count)
+                        tempCats[i].Unlocked = true;
+                }
+                catListForRewrite = tempCats;
+            }
+
+            using (StreamWriter file = File.CreateText(rootpath + "/database/cats.json"))
+            {
+                JsonSerializer serializer = new JsonSerializer();
+                serializer.Serialize(file, catListForRewrite);
+            }
+
+        }
+
+        if(planet.Index == 4 || planet.Index == 0)
+        {
+            List<bool> awardsListForRewrite;
+           using (StreamReader r = new StreamReader(rootpath + "/database/awards.json"))
+           {
+               string json = r.ReadToEnd();
+               var tempAwards = JsonConvert.DeserializeObject<List<bool>>(json);
+               
+               switch(planet.Index)
+               {
+                   case 0:
+                       tempAwards[0] = true;
+                       break;
+                   case 4:
+                       tempAwards[1] = true;
+                       tempAwards[2] = true;
+                       tempAwards[3] = true;
+                       break;
+               }
+
+                awardsListForRewrite = tempAwards;
+           }
+
+              using (StreamWriter file = File.CreateText(rootpath + "/database/awards.json"))
+              {
+                JsonSerializer serializer = new JsonSerializer();
+                serializer.Serialize(file, awardsListForRewrite);
+              }
         }
 
         using (StreamWriter file = File.CreateText(rootpath + "/database/planets.json"))
@@ -509,10 +556,10 @@
                 ratsOnField[i].CanMove = true;
 
                 if ((ratsOnField[i].Y >= catsOnField[y, x].Y && ratsOnField[i].Y <= catsOnField[y, x].Y + catsOnField[y, x].Height)
-                || (catsOnField[y, x].Y >= ratsOnField[i].Y && catsOnField[y, x].Y <= ratsOnField[i].Y + ratsOnField[i].Height))
+                || (ratsOnField[i].Y + ratsOnField[i].Height >= catsOnField[y, x].Y && ratsOnField[i].Y + ratsOnField[i].Height <= catsOnField[y, x].Y + catsOnField[y, x].Height))
                 {
                     if ((ratsOnField[i].X <= catsOnField[y, x].X + catsOnField[y, x].Width && ratsOnField[i].X >= catsOnField[y, x].X) 
-                    || (catsOnField[y, x].X <= ratsOnField[i].X + ratsOnField[i].Width && catsOnField[y, x].X >= ratsOnField[i].X))
+                    || (ratsOnField[i].X + ratsOnField[i].Width <= catsOnField[y, x].X + catsOnField[y, x].Width && ratsOnField[i].X + ratsOnField[i].Width >= catsOnField[y, x].X))
                     {
                         ratsOnField[i].CanMove = false;
 
