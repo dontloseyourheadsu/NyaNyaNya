@@ -15,6 +15,7 @@ namespace NyaNyaNya.Models
         public int Life { get; set; }
         public int Attack { get; set; }
         public int Speed { get; set; }
+        public int Recharge { get; set; }
         public int X { get; set; }
         public int Y { get; set; }
         public int Width { get; set; }
@@ -24,6 +25,7 @@ namespace NyaNyaNya.Models
         public bool Alive { get; set; }
         public bool WasReleasedDuringWave { get; set; }
         public bool HasLanded { get; set; }
+        public bool CanMove { get; set; }
 
         public Rat() { }
         public Rat(Rat rat)
@@ -34,6 +36,7 @@ namespace NyaNyaNya.Models
             Life = rat.Life;
             Attack = rat.Attack;
             Speed = rat.Speed;
+            Recharge = rat.Recharge;
             X = rat.X;
             Y = rat.Y;
             Width = rat.Width;
@@ -43,6 +46,7 @@ namespace NyaNyaNya.Models
             Alive = true;
             WasReleasedDuringWave = true;
             HasLanded = false;
+            CanMove = true;
         }
     }
 }

@@ -13,6 +13,20 @@
         </NavLink>
     </div>
 
+    <div class="@($"menu-frame d-flex justify-content-between align-items-center position-absolute {lostFrameClass}")" style="z-index: 10;">
+        <p style="font-family: PressStart2P; font-size: 16px; color: white; transform: translateX(50%);">You Lost</p>
+        <NavLink href="@($"/{IsPlayMusic}")" class="cursor-pointer">
+            <span class="exit-button justify-content-center cursor-pointer">Exit</span>
+        </NavLink>
+    </div>
+
+    <div class="@($"menu-frame d-flex justify-content-between align-items-center position-absolute {wonFrameClass}")" style="z-index: 10;">
+        <p style="font-family: PressStart2P; font-size: 16px; color: white; transform: translateX(50%);">You Won</p>
+        <NavLink href="@($"/{IsPlayMusic}")" class="cursor-pointer">
+            <span class="exit-button justify-content-center cursor-pointer">Exit</span>
+        </NavLink>
+    </div>
+
     <span class="position-absolute game-box config-box cursor-pointer justify-content-center" @onclick="@SwitchMenuFrame">
         <img src="images/icons/pixel-paw.png" alt="paw" style="height: 90%; width: 90%;" />
     </span>
@@ -108,10 +122,12 @@
             </div>
         }
     </div>
-
-    <p style="color: white; position: absolute; bottom: 0; left: 0;">
-        @gameSeconds | @planet.Waves
-    </p>
+    
+    <!--
+        <p style="color: white; position: absolute; bottom: 0; left: 0;">
+            @gameSeconds | @planet.Waves | @attacks
+        </p>
+    -->
 </div>
 
 <MusicPlayer Track="Skate" PlayMusic="IsPlayMusic" />
@@ -128,6 +144,7 @@
 
     Planet planet;
 
+    private int attacks = 0;
     private int energy = 1;
     protected float gameSpeed = 0.125f;
     protected float gameSeconds = 0;
@@ -142,9 +159,15 @@
 
     private int ratFallIndex;
     private bool firstWaveLoop = true;
+    private bool lostGame = false;
+    private bool wonGame = false;
 
     private string menuFrameClass = "menu-frame-off";
     private bool menuFrameOn = false;
+    private string lostFrameClass = "menu-frame-off";
+    private bool lostFrameOn = false;
+    private string wonFrameClass = "menu-frame-off";
+    private bool wonFrameOn = false;
 
     private List<string> containerClasses = new List<string>();
     private string containerSelected = "drawer-selected";
@@ -229,6 +252,18 @@
     {
         menuFrameOn = !menuFrameOn;
         menuFrameClass = menuFrameOn ? "" : "menu-frame-off";
+    }
+
+    protected void SwitchLostFrame()
+    {
+        lostFrameOn = true;
+        lostFrameClass = lostFrameOn ? "" : "menu-frame-off";
+    }
+
+    protected void SwitchWonFrame()
+    {
+        wonFrameOn = true;
+        wonFrameClass = wonFrameOn ? "" : "menu-frame-off";
     }
 
     private void SelectCat(MouseEventArgs e, int selectedDrawer)
@@ -422,8 +457,13 @@
     {
         for (int i = 0; i < ratsOnField.Length; i++)
         {
-            if (ratsOnField[i].HasLanded)
+            if (ratsOnField[i].HasLanded && ratsOnField[i].CanMove)
             {
+                if (ratsOnField[i].X <= 180 - ratsOnField[i].Width)
+                {
+                    lostGame = true;
+                    SwitchLostFrame();
+                }
                 ratsOnField[i].X -= ratsOnField[i].Speed;
             }
         }
@@ -435,12 +475,19 @@
         {
             if (ratsOnField[i].HasLanded)
             {
-                if (ratsOnField[i].X <= catsOnField[y, x].X + 30 && ratsOnField[i].X >= catsOnField[y, x].X)
+                ratsOnField[i].CanMove = true;
+
+                if ((ratsOnField[i].X <= catsOnField[y, x].X + catsOnField[y, x].Width && ratsOnField[i].X >= catsOnField[y, x].X) || (catsOnField[y, x].X <= ratsOnField[i].X + ratsOnField[i].Width && catsOnField[y, x].X >= ratsOnField[i].X))
                 {
-                    if (ratsOnField[i].Y >= catsOnField[y, x].Y && ratsOnField[i].Y <= catsOnField[y, x].Y + 80)
+                    if ((ratsOnField[i].Y >= catsOnField[y, x].Y && ratsOnField[i].Y <= catsOnField[y, x].Y + catsOnField[y, x].Height) || (catsOnField[y, x].Y >= ratsOnField[i].Y && catsOnField[y, x].Y <= ratsOnField[i].Y + ratsOnField[i].Height))
                     {
-                        catsOnField[y, x].Life = catsOnField[y, x].Life - ratsOnField[i].Attack;
-                        ratsOnField[i].X -= ratsOnField[i].Speed;
+                        ratsOnField[i].CanMove = false;
+
+                        if (gameSeconds % ratsOnField[i].Recharge == 0)
+                        {
+                            attacks++;
+                            catsOnField[y, x].Life = catsOnField[y, x].Life - ratsOnField[i].Attack;
+                        }
                     }
                 }
             }
@@ -456,7 +503,7 @@
     {
         if (firstRender)
         {
-            while (true)
+            while (true && !lostGame && !wonGame)
             {
                 await Task.Delay((int)(1000 * gameSpeed));
 
