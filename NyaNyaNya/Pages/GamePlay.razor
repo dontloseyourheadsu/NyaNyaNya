@@ -90,6 +90,13 @@
              style="@($"width: 30px; height: 30px;")" />
                             </div>
                             break;
+                        case "SpIce Cat":
+                            <div class="position-absolute" style="@($"top: {cat.ProjectilesY[pId]}px; left: {cat.ProjectilesX[pId]}px;")">
+                                <img class="position-absolute" src="images/projectiles/ice-ball.png"
+             style="@($"width: 30px; height: 30px;")" />
+                            </div>
+
+                            break;
                     }
                 }
 
@@ -120,7 +127,7 @@
                 <div class="cat-container d-flex align-items-center justify-content-center" style="height: 80%; width: 100%;">
                     <img src="@catDrawer[i].Image" style="width: 75%; height: 75%;" />
                 </div>
-                <span class="cat-container d-flex align-items-center justify-content-center" style="height: 20%; width: 100%; font-size: 5px;">@catDrawer[i].Name</span>
+                <span class="cat-container d-flex align-items-center justify-content-center" style="height: 20%; width: 100%; font-size: 6px;">@catDrawer[i].Price</span>
             </div>
         }
     </div>
@@ -293,31 +300,31 @@
         if(planet.Index == 4 || planet.Index == 0)
         {
             List<bool> awardsListForRewrite;
-           using (StreamReader r = new StreamReader(rootpath + "/database/awards.json"))
-           {
-               string json = r.ReadToEnd();
-               var tempAwards = JsonConvert.DeserializeObject<List<bool>>(json);
-               
-               switch(planet.Index)
-               {
-                   case 0:
-                       tempAwards[0] = true;
-                       break;
-                   case 4:
-                       tempAwards[1] = true;
-                       tempAwards[2] = true;
-                       tempAwards[3] = true;
-                       break;
-               }
+            using (StreamReader r = new StreamReader(rootpath + "/database/awards.json"))
+            {
+                string json = r.ReadToEnd();
+                var tempAwards = JsonConvert.DeserializeObject<List<bool>>(json);
+
+                switch(planet.Index)
+                {
+                    case 0:
+                        tempAwards[0] = true;
+                        break;
+                    case 4:
+                        tempAwards[1] = true;
+                        tempAwards[2] = true;
+                        tempAwards[3] = true;
+                        break;
+                }
 
                 awardsListForRewrite = tempAwards;
-           }
+            }
 
-              using (StreamWriter file = File.CreateText(rootpath + "/database/awards.json"))
-              {
+            using (StreamWriter file = File.CreateText(rootpath + "/database/awards.json"))
+            {
                 JsonSerializer serializer = new JsonSerializer();
                 serializer.Serialize(file, awardsListForRewrite);
-              }
+            }
         }
 
         using (StreamWriter file = File.CreateText(rootpath + "/database/planets.json"))
@@ -398,6 +405,7 @@
                 switch (catsOnField[j, i].Name)
                 {
                     case "Space Cat":
+                    case "SpIce Cat":
                         for (int k = 0; k < catsOnField[j, i].Projectiles.Length; k++)
                         {
                             if (catsOnField[j, i].Projectiles[k] && ratsOnPlatform[ratPlatformFallIndex[j]] > 0)
@@ -425,12 +433,31 @@
                             }
                         }
                         break;
-                    case "Wise Cat":
-
+                    case "Savage Cat":
+                        CheckPunches(i, j);
                         break;
                 }
 
                 CheckRatCollision(i, j);
+            }
+        }
+    }
+
+    private void CheckPunches(int x, int y)
+    {
+        for(int i = 0; i < ratsOnField.Length; i++)
+        {
+            if (ratsOnField[i].WasReleasedDuringWave && ratsOnField[i].Life > 0)
+            {
+                if ((ratsOnField[i].Y >= catsOnField[y, x].Y && ratsOnField[i].Y <= catsOnField[y, x].Y + catsOnField[y, x].Height)
+                || (ratsOnField[i].Y + ratsOnField[i].Height >= catsOnField[y, x].Y && ratsOnField[i].Y + ratsOnField[i].Height <= catsOnField[y, x].Y + catsOnField[y, x].Height))
+                {
+                    if ((ratsOnField[i].X <= catsOnField[y, x].X + catsOnField[y, x].Width && ratsOnField[i].X >= catsOnField[y, x].X)
+                    || (ratsOnField[i].X + ratsOnField[i].Width <= catsOnField[y, x].X + catsOnField[y, x].Width && ratsOnField[i].X + ratsOnField[i].Width >= catsOnField[y, x].X))
+                    {
+                        ratsOnField[i].Life -= catsOnField[y, x].Attack;
+                    }    
+                }
             }
         }
     }
@@ -490,7 +517,8 @@
 
             switch (cat.Name)
             {
-                case "Space Cat":
+                case "Space Cat": 
+                case "SpIce Cat":
                     if ((pY >= rat.Y && pY <= rat.Y + rat.Height) || (rat.Y >= pY && rat.Y <= pY + 30))
                     {
                         if ((pX >= rat.X && pX <= rat.X + rat.Width) || (rat.X >= pX && rat.X <= pX + 30))
@@ -498,6 +526,14 @@
                             ratsOnField[i].Life = ratsOnField[i].Life - cat.Attack;
                             catsOnField[y, x].ProjectilesX[p] = catsOnField[y, x].X;
                             catsOnField[y, x].Projectiles[p] = false;
+
+                            if (cat.Name == "SpIce Cat")
+                            {
+                                ratsOnField[i].IsFreezed = true;
+
+                                Task.Run(async () => await Task.Delay(2000)).ContinueWith(t => ratsOnField[i].IsFreezed = false);
+                            }
+
                             break;
                         }
                     }

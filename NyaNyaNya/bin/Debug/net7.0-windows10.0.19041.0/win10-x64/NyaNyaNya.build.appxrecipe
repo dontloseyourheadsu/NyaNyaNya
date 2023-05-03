@@ -904,6 +904,9 @@
     <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\projectiles\energy-ball.png">
       <PackagePath>wwwroot\images\projectiles\energy-ball.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\projectiles\ice-ball.png">
+      <PackagePath>wwwroot\images\projectiles\ice-ball.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\rats\cyber-rat.png">
       <PackagePath>wwwroot\images\rats\cyber-rat.png</PackagePath>
     </AppxPackagedFile>

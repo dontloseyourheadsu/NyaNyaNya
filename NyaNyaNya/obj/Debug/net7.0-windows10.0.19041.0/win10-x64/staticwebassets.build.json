@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ySWC7vkllZwCrNeUH79OhvQbeohbD66vd9WXjIJbFC0=",
+  "Hash": "pM+yR8WfZMnXO7k0PUqbod8V8psBrOyQlqNl7ouM22w=",
   "Source": "NyaNyaNya",
   "BasePath": "/",
   "Mode": "Root",
@@ -848,6 +848,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\projectiles\\energy-ball.png"
+    },
+    {
+      "Identity": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\projectiles\\ice-ball.png",
+      "SourceId": "NyaNyaNya",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "images/projectiles/ice-ball.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\projectiles\\ice-ball.png"
     },
     {
       "Identity": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\rats\\cyber-rat.png",

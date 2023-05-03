@@ -26,6 +26,7 @@ namespace NyaNyaNya.Models
         public bool WasReleasedDuringWave { get; set; }
         public bool HasLanded { get; set; }
         public bool CanMove { get; set; }
+        public bool IsFreezed { get; set; }
 
         public Rat() { }
         public Rat(Rat rat)
@@ -47,6 +48,7 @@ namespace NyaNyaNya.Models
             WasReleasedDuringWave = true;
             HasLanded = false;
             CanMove = true;
+            IsFreezed = false;
         }
     }
 }
