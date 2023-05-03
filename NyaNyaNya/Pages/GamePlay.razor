@@ -32,7 +32,7 @@
     </span>
 
     <div class="position-absolute" style="left: 50px; bottom: 125px;">
-        <img src="images/backgrounds/Castel.png" alt="castle" style="height: 200px; width: 200px;" />
+        <img src="images/backgrounds/Castel.png" alt="castle" style="height: 300px; width: 300px;" />
     </div>
 
     <!--platforms-->
@@ -95,7 +95,12 @@
                                 <img class="position-absolute" src="images/projectiles/ice-ball.png"
              style="@($"width: 30px; height: 30px;")" />
                             </div>
-
+                            break;
+                        case "Projectile Cat":
+                            <div class="position-absolute" style="@($"top: {cat.ProjectilesY[pId]}px; left: {cat.ProjectilesX[pId]}px;")">
+                                <img class="position-absolute" src="images/projectiles/misile.png"
+             style="@($"width: 30px; height: 30px;")" />
+                            </div>
                             break;
                     }
                 }
@@ -167,6 +172,8 @@
     private Rat[]? ratsOnField = new Rat[10];
     private bool[] ratsCanFall = new bool[10];
     private int[] ratPlatformFallIndex = new int[10];
+    private List<Rat> portalRats = new List<Rat>();
+    private int portalRatIndex = 0;
 
     private int ratFallIndex;
     private bool firstWaveLoop = true;
@@ -406,6 +413,7 @@
                 {
                     case "Space Cat":
                     case "SpIce Cat":
+                    case "Projectile Cat":
                         for (int k = 0; k < catsOnField[j, i].Projectiles.Length; k++)
                         {
                             if (catsOnField[j, i].Projectiles[k] && ratsOnPlatform[ratPlatformFallIndex[j]] > 0)
@@ -434,6 +442,8 @@
                         }
                         break;
                     case "Savage Cat":
+                    case "Tramp Cat":
+                    case "Genius Cat":
                         CheckPunches(i, j);
                         break;
                 }
@@ -456,6 +466,15 @@
                     || (ratsOnField[i].X + ratsOnField[i].Width <= catsOnField[y, x].X + catsOnField[y, x].Width && ratsOnField[i].X + ratsOnField[i].Width >= catsOnField[y, x].X))
                     {
                         ratsOnField[i].Life -= catsOnField[y, x].Attack;
+
+                        if(catsOnField[y, x].Name == "Genius Cat")
+                        {
+                            Task.Run(async () =>
+                            {
+                                await Task.Delay(2000);
+                                catsOnField[y, x] = new Cat() { Name = "", Image = "" };
+                            });
+                        }
                     }    
                 }
             }
@@ -490,7 +509,15 @@
 
             if (ratsCanFall[i] && ratsOnField[i].WasReleasedDuringWave)
             {
-                ratsOnField[i].Y += 5;
+                if(portalRats.Count > 0)
+                {
+                    ratsOnField[i].Y = portalRats[portalRatIndex].Y - ratsOnField[i].Height;
+                }
+                else
+                {                
+                    ratsOnField[i].Y += 5;
+                }
+
             }
 
             if (ratsOnField[i].Y >= platformsY[ratPlatformFallIndex[i]] && ratsOnField[i].Y <= platformsY[ratPlatformFallIndex[i]] + 80)
@@ -498,6 +525,11 @@
                 ratsCanFall[i] = false;
                 ratsOnField[i].HasLanded = true;
                 ratsOnPlatform[ratPlatformFallIndex[i]]++;
+
+                if (ratsOnField[i].Name == "Portal Rat")
+                {
+                    portalRats.Add(ratsOnField[i]);
+                }
             }
         }
     }
@@ -557,6 +589,10 @@
                 ratsOnField[i].HasLanded = false;
                 ratsAlive--;
                 ratsOnPlatform[ratPlatformFallIndex[i]]--;
+                if(ratsOnField[i].Name == "Portal Rat")
+                {
+                    portalRats.Remove(ratsOnField[i]);
+                }
 
                 if(ratsAlive <= 0)
                 {

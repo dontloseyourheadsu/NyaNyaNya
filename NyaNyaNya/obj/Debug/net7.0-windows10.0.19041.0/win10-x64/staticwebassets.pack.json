@@ -197,6 +197,10 @@
       "PackagePath": "staticwebassets\\images\\projectiles\\ice-ball.png"
     },
     {
+      "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\projectiles\\misile.png",
+      "PackagePath": "staticwebassets\\images\\projectiles\\misile.png"
+    },
+    {
       "Id": "C:\\Users\\yisus\\Documents\\GitHub\\NyaNyaNya\\NyaNyaNya\\wwwroot\\images\\rats\\cyber-rat.png",
       "PackagePath": "staticwebassets\\images\\rats\\cyber-rat.png"
     },
