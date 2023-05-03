@@ -5,7 +5,7 @@
     "Image": "images/cats/space-cat.png",
     "Life": 5,
     "Attack": 1,
-    "Recharge": 5,
+    "Recharge": 7,
     "Price": 1,
     "X": 0,
     "Y": 0,

@@ -14,14 +14,14 @@
     </div>
 
     <div class="@($"menu-frame d-flex justify-content-between align-items-center position-absolute {lostFrameClass}")" style="z-index: 10;">
-        <p style="font-family: PressStart2P; font-size: 16px; color: white; transform: translateX(50%);">You Lost</p>
+        <p style="font-family: PressStart2P; font-size: 24px; color: white; transform: translateX(100%);">You Lost</p>
         <NavLink href="@($"/{IsPlayMusic}")" class="cursor-pointer">
             <span class="exit-button justify-content-center cursor-pointer">Exit</span>
         </NavLink>
     </div>
 
     <div class="@($"menu-frame d-flex justify-content-between align-items-center position-absolute {wonFrameClass}")" style="z-index: 10;">
-        <p style="font-family: PressStart2P; font-size: 16px; color: white; transform: translateX(50%);">You Won</p>
+        <p style="font-family: PressStart2P; font-size: 24px; color: white; transform: translateX(100%);">You Won</p>
         <NavLink href="@($"/{IsPlayMusic}")" class="cursor-pointer">
             <span class="exit-button justify-content-center cursor-pointer">Exit</span>
         </NavLink>
@@ -77,7 +77,7 @@
                     switch (cat.Name)
                     {
                         case "Space Cat":
-                            <div class="position-absolute" style="@($"top: {cat.ProjectilesY[pId]}px; left: {cat.ProjectilesX[pId]}px;")" @onclick="@(e => Recharge(e, x, y, pId))">
+                            <div class="position-absolute" style="@($"top: {cat.ProjectilesY[pId]}px; left: {cat.ProjectilesX[pId]}px;")">
                                 <img class="position-absolute" src="images/projectiles/energy-ball.png"
              style="@($"width: 30px; height: 30px;")" />
                             </div>
@@ -123,11 +123,11 @@
         }
     </div>
     
-    <!--
+    
         <p style="color: white; position: absolute; bottom: 0; left: 0;">
-            @gameSeconds | @planet.Waves | @attacks
+            @gameSeconds | @planet.Waves | @isWave | @currentWave
         </p>
-    -->
+    
 </div>
 
 <MusicPlayer Track="Skate" PlayMusic="IsPlayMusic" />
@@ -143,16 +143,24 @@
     public int CatNames { get; set; }
 
     Planet planet;
+    List<Planet> planetsForUse = new List<Planet>();
 
-    private int attacks = 0;
     private int energy = 1;
     protected float gameSpeed = 0.125f;
     protected float gameSeconds = 0;
 
     private List<int> platformsX = new List<int>();
     private List<int> platformsY = new List<int>();
+    private int[] ratsOnPlatform = new int[4] { 0, 0, 0, 0};
 
+    private List<Cat> catDrawer = new List<Cat>();
     private Cat[,]? catsOnField = new Cat[4, 8];
+    private List<string> containerClasses = new List<string>();
+    private string containerSelected = "drawer-selected";
+    private Cat selectedCat;
+    private bool catIsSelected = false;
+
+    private List<Rat> rats = new List<Rat>();
     private Rat[]? ratsOnField = new Rat[10];
     private bool[] ratsCanFall = new bool[10];
     private int[] ratPlatformFallIndex = new int[10];
@@ -161,6 +169,7 @@
     private bool firstWaveLoop = true;
     private bool lostGame = false;
     private bool wonGame = false;
+    private bool canWin = false;
 
     private string menuFrameClass = "menu-frame-off";
     private bool menuFrameOn = false;
@@ -169,15 +178,9 @@
     private string wonFrameClass = "menu-frame-off";
     private bool wonFrameOn = false;
 
-    private List<string> containerClasses = new List<string>();
-    private string containerSelected = "drawer-selected";
-    private Cat selectedCat;
-    private bool catIsSelected = false;
-
     private bool isWave = false;
-
-    private List<Cat> catDrawer = new List<Cat>();
-    private List<Rat> rats = new List<Rat>();
+    private int ratsAlive = 10;
+    private int currentWave = 0;
 
     string rootpath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "wwwroot");
 
@@ -202,7 +205,7 @@
         {
             string json = r.ReadToEnd();
             var tempPlanets = JsonConvert.DeserializeObject<List<Planet>>(json);
-
+            planetsForUse = tempPlanets;
             planet = tempPlanets.Where(p => p.Index == PlanetId).FirstOrDefault();
         }
 
@@ -264,6 +267,17 @@
     {
         wonFrameOn = true;
         wonFrameClass = wonFrameOn ? "" : "menu-frame-off";
+
+        if (planetsForUse.Count > planet.Index + 1)
+        {
+            planetsForUse[planet.Index + 1].IsActive = true;
+        }
+
+        using (StreamWriter file = File.CreateText(rootpath + "/database/planets.json"))
+        {
+            JsonSerializer serializer = new JsonSerializer();
+            serializer.Serialize(file, planetsForUse);
+        }
     }
 
     private void SelectCat(MouseEventArgs e, int selectedDrawer)
@@ -339,7 +353,7 @@
                     case "Space Cat":
                         for (int k = 0; k < catsOnField[j, i].Projectiles.Length; k++)
                         {
-                            if (catsOnField[j, i].Projectiles[k])
+                            if (catsOnField[j, i].Projectiles[k] && ratsOnPlatform[ratPlatformFallIndex[j]] > 0)
                             {
                                 if (catsOnField[j, i].ProjectilesFirstActive[k])
                                 {
@@ -349,7 +363,15 @@
                                 }
                                 else
                                 {
-                                    catsOnField[j, i].ProjectilesX[k] += 3;
+                                    if (catsOnField[j, i].ProjectilesX[k] < 900)
+                                    {
+                                        catsOnField[j, i].ProjectilesX[k] += 3;
+                                    }
+                                    else
+                                    {
+                                        catsOnField[j, i].Projectiles[k] = false;
+                                        catsOnField[j, i].ProjectilesFirstActive[k] = true;
+                                    }
                                 }
 
                                 CheckProjectileCollision(i, j, k);
@@ -401,6 +423,7 @@
             {
                 ratsCanFall[i] = false;
                 ratsOnField[i].HasLanded = true;
+                ratsOnPlatform[ratPlatformFallIndex[i]]++;
             }
         }
     }
@@ -449,6 +472,14 @@
                 ratsOnField[i].Y = rats[ratIndex].Y;
                 ratsOnField[i].WasReleasedDuringWave = false;
                 ratsOnField[i].HasLanded = false;
+                ratsAlive--;
+                ratsOnPlatform[ratPlatformFallIndex[i]]--;
+
+                if(ratsAlive <= 0)
+                {
+                    RestoreGameForNextWave();
+                    break;
+                }
             }
         }
     }
@@ -477,15 +508,16 @@
             {
                 ratsOnField[i].CanMove = true;
 
-                if ((ratsOnField[i].X <= catsOnField[y, x].X + catsOnField[y, x].Width && ratsOnField[i].X >= catsOnField[y, x].X) || (catsOnField[y, x].X <= ratsOnField[i].X + ratsOnField[i].Width && catsOnField[y, x].X >= ratsOnField[i].X))
+                if ((ratsOnField[i].Y >= catsOnField[y, x].Y && ratsOnField[i].Y <= catsOnField[y, x].Y + catsOnField[y, x].Height)
+                || (catsOnField[y, x].Y >= ratsOnField[i].Y && catsOnField[y, x].Y <= ratsOnField[i].Y + ratsOnField[i].Height))
                 {
-                    if ((ratsOnField[i].Y >= catsOnField[y, x].Y && ratsOnField[i].Y <= catsOnField[y, x].Y + catsOnField[y, x].Height) || (catsOnField[y, x].Y >= ratsOnField[i].Y && catsOnField[y, x].Y <= ratsOnField[i].Y + ratsOnField[i].Height))
+                    if ((ratsOnField[i].X <= catsOnField[y, x].X + catsOnField[y, x].Width && ratsOnField[i].X >= catsOnField[y, x].X) 
+                    || (catsOnField[y, x].X <= ratsOnField[i].X + ratsOnField[i].Width && catsOnField[y, x].X >= ratsOnField[i].X))
                     {
                         ratsOnField[i].CanMove = false;
 
                         if (gameSeconds % ratsOnField[i].Recharge == 0)
                         {
-                            attacks++;
                             catsOnField[y, x].Life = catsOnField[y, x].Life - ratsOnField[i].Attack;
                         }
                     }
@@ -497,6 +529,40 @@
     private void RemoveCat(int x, int y)
     {
         catsOnField[y,x] =  new Cat() { Name = "", Image = "" };
+    }
+
+    private void RestoreGameForNextWave()
+    {
+        if(canWin)
+        {
+            wonGame = true;
+            SwitchWonFrame();
+            return;
+        }
+
+        isWave = !isWave;
+
+        firstWaveLoop = true;
+        ratFallIndex = 0;
+        ratsAlive = ratsOnField.Length;
+
+        ratsOnField = ratsOnField.OrderBy(r => Guid.NewGuid()).ToArray();
+        ratPlatformFallIndex = ratPlatformFallIndex.OrderBy(r => Guid.NewGuid()).ToArray();
+
+        for(int i = 0; i < ratsOnField.Length; i++)
+        {
+            ratsOnField[i].WasReleasedDuringWave = true;
+        }
+
+        if(isWave)
+        {
+            currentWave++;
+        }
+
+        if(currentWave == planet.Waves)
+        {
+            canWin = true;
+        }
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
