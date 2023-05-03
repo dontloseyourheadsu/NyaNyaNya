@@ -19,7 +19,7 @@
     "Image": "images/cats/wise-cat.png",
     "Life": 4,
     "Attack": 0,
-    "Recharge": 5,
+    "Recharge": 8,
     "Price": 1,
     "X": 0,
     "Y": 0,

@@ -1,27 +1,33 @@
 [
   {
     "index": 0,
-    "isActive": true
+    "isActive": true,
+    "waves": 2
   },
   {
     "index": 1,
-    "isActive": false
+    "isActive": false,
+    "waves": 2
   },
   {
     "index": 2,
-    "isActive": false
+    "isActive": false,
+    "waves": 3
   },
   {
     "index": 3,
-    "isActive": false
+    "isActive": false,
+    "waves": 3
   },
   {
     "index": 4,
-    "isActive": false
+    "isActive": false,
+    "waves": 4
   },
   {
     "index": 100,
-    "isActive": true
+    "isActive": true,
+    "waves": 2
   }
 ]
 

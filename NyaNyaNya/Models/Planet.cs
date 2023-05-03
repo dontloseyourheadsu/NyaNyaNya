@@ -6,5 +6,6 @@ namespace NyaNyaNya.Models
     {
         public bool IsActive { get; set; }
         public int Index { get; set; }
+        public int Waves { get; set; }
     }
 }

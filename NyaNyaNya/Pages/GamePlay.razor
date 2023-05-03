@@ -110,7 +110,7 @@
     </div>
 
     <p style="color: white; position: absolute; bottom: 0; left: 0;">
-        @gameSeconds | @ratsOnField[0].Life
+        @gameSeconds | @planet.Waves
     </p>
 </div>
 
@@ -125,6 +125,8 @@
 
     [Parameter]
     public int CatNames { get; set; }
+
+    Planet planet;
 
     private int energy = 1;
     protected float gameSpeed = 0.125f;
@@ -150,7 +152,6 @@
     private bool catIsSelected = false;
 
     private bool isWave = false;
-    private bool isColision = false;
 
     private List<Cat> catDrawer = new List<Cat>();
     private List<Rat> rats = new List<Rat>();
@@ -172,6 +173,14 @@
             var tempRats = JsonConvert.DeserializeObject<List<Rat>>(json);
 
             rats = tempRats.Where(r => r.Worlds.Contains(PlanetId)).ToList();
+        }
+
+        using (StreamReader r = new StreamReader(rootpath + "/database/planets.json"))
+        {
+            string json = r.ReadToEnd();
+            var tempPlanets = JsonConvert.DeserializeObject<List<Planet>>(json);
+
+            planet = tempPlanets.Where(p => p.Index == PlanetId).FirstOrDefault();
         }
 
         File.WriteAllText(rootpath + "/database/selected-cats.json", string.Empty);
@@ -271,6 +280,12 @@
             {
                 if (catsOnField[j, i].Name == null || catsOnField[j, i].Name == "") continue;
 
+                if(catsOnField[j, i].Life <= 0)
+                {
+                    RemoveCat(i, j);
+                    continue;
+                }
+
                 if (gameSeconds % catsOnField[j, i].Recharge == 0)
                 {
                     catsOnField[j, i].Projectiles[catsOnField[j, i].ProjectileIndex] = true;
@@ -310,6 +325,8 @@
 
                         break;
                 }
+
+                CheckRatCollision(i, j);
             }
         }
     }
@@ -376,12 +393,12 @@
                             ratsOnField[i].Life = ratsOnField[i].Life - cat.Attack;
                             catsOnField[y, x].ProjectilesX[p] = catsOnField[y, x].X;
                             catsOnField[y, x].Projectiles[p] = false;
-                            isColision = true;
                             break;
                         }
                     }
                     break;
             }
+
         }
     }
 
@@ -410,6 +427,29 @@
                 ratsOnField[i].X -= ratsOnField[i].Speed;
             }
         }
+    }
+
+    private void CheckRatCollision(int x, int y)
+    {
+        for (int i = 0; i < ratsOnField.Length; i++)
+        {
+            if (ratsOnField[i].HasLanded)
+            {
+                if (ratsOnField[i].X <= catsOnField[y, x].X + 30 && ratsOnField[i].X >= catsOnField[y, x].X)
+                {
+                    if (ratsOnField[i].Y >= catsOnField[y, x].Y && ratsOnField[i].Y <= catsOnField[y, x].Y + 80)
+                    {
+                        catsOnField[y, x].Life = catsOnField[y, x].Life - ratsOnField[i].Attack;
+                        ratsOnField[i].X -= ratsOnField[i].Speed;
+                    }
+                }
+            }
+        }
+    }
+
+    private void RemoveCat(int x, int y)
+    {
+        catsOnField[y,x] =  new Cat() { Name = "", Image = "" };
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
