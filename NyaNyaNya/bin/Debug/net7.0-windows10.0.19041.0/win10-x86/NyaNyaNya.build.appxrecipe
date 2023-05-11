@@ -796,8 +796,20 @@
     <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\backgrounds\background-0.jpg">
       <PackagePath>wwwroot\images\backgrounds\background-0.jpg</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\backgrounds\background-1.jpg">
+      <PackagePath>wwwroot\images\backgrounds\background-1.jpg</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\backgrounds\background-100.jpg">
       <PackagePath>wwwroot\images\backgrounds\background-100.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\backgrounds\background-2.jpg">
+      <PackagePath>wwwroot\images\backgrounds\background-2.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\backgrounds\background-3.jpg">
+      <PackagePath>wwwroot\images\backgrounds\background-3.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\backgrounds\background-4.jpg">
+      <PackagePath>wwwroot\images\backgrounds\background-4.jpg</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\backgrounds\Castel.png">
       <PackagePath>wwwroot\images\backgrounds\Castel.png</PackagePath>
@@ -891,6 +903,12 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\projectiles\energy-ball.png">
       <PackagePath>wwwroot\images\projectiles\energy-ball.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\projectiles\ice-ball.png">
+      <PackagePath>wwwroot\images\projectiles\ice-ball.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\projectiles\misile.png">
+      <PackagePath>wwwroot\images\projectiles\misile.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\wwwroot\images\rats\cyber-rat.png">
       <PackagePath>wwwroot\images\rats\cyber-rat.png</PackagePath>

@@ -18,24 +18,24 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\AppX</LayoutDir>
-    <RegisteredManifestChecksum>415916C76CCCC46470FB559C65CDE27675A6CD3D86FD2529F8942905C22231D3</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>DFF67BB1-A750-4D54-88DB-443D16BF03A5_1.0.0.1_x64__9zz4h110yvjzm</RegisteredPackageMoniker>
+    <RegisteredManifestChecksum>432EE23D5D392A9262024593AF26DA07CCD706CA55F87A93076FA45DAD2C0E9C</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>DFF67BB1-A750-4D54-88DB-443D16BF03A5_0.0.1.0_x64__9zz4h110yvjzm</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>DFF67BB1-A750-4D54-88DB-443D16BF03A5_9zz4h110yvjzm!App</RegisteredUserModeAppID>
     <RegisteredPackageID>DFF67BB1-A750-4D54-88DB-443D16BF03A5</RegisteredPackageID>
     <RegisteredPackagePublisher>CN=User Name</RegisteredPackagePublisher>
-    <RegisteredVersion>1.0.0.1</RegisteredVersion>
+    <RegisteredVersion>0.0.1.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
     <AppXManifest Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-05-03T20:09:26.648</Modified>
+      <Modified>2023-05-04T00:04:18.970</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-05-03T20:09:26.333</Modified>
+      <Modified>2023-05-04T00:04:18.438</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\NyaNyaNya.runtimeconfig.json">
       <PackagePath>NyaNyaNya.runtimeconfig.json</PackagePath>
@@ -43,11 +43,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\NyaNyaNya.dll">
       <PackagePath>NyaNyaNya.dll</PackagePath>
-      <Modified>2023-05-03T20:09:25.709</Modified>
+      <Modified>2023-05-03T22:12:41.448</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>NyaNyaNya.exe</PackagePath>
-      <Modified>2023-05-03T20:09:25.718</Modified>
+      <Modified>2023-05-03T22:12:41.475</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\yisus\.nuget\packages\microsoft.netcore.app.runtime.win-x64\7.0.2\runtimes\win-x64\lib\net7.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -991,7 +991,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\yisus\Documents\GitHub\NyaNyaNya\NyaNyaNya\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\NyaNyaNya.deps.json">
       <PackagePath>NyaNyaNya.deps.json</PackagePath>
-      <Modified>2023-05-03T20:09:26.531</Modified>
+      <Modified>2023-05-04T00:04:18.830</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Controls.Ref.win\7.0.52\ref\net7.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>

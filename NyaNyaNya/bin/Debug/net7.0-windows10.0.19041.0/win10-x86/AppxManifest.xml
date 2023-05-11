@@ -7,7 +7,7 @@
 
     Para obtener más información acerca de los archivos de manifiesto del paquete, vea http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="DFF67BB1-A750-4D54-88DB-443D16BF03A5" Publisher="CN=User Name" Version="1.0.0.1" ProcessorArchitecture="x86" />
+  <Identity Name="DFF67BB1-A750-4D54-88DB-443D16BF03A5" Publisher="CN=User Name" Version="0.0.1.0" ProcessorArchitecture="x86" />
   <mp:PhoneIdentity PhoneProductId="6B438A8A-A075-4441-9A91-FBEB42DB1B28" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>NyaNyaNya</DisplayName>
